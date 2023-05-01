@@ -13,7 +13,7 @@ function loadRememberedUser() {
         document.getElementById('loginEmail').value = rememberedUser.mail;
         document.getElementById('loginPassword').value = rememberedUser.password;
         document.getElementById("loginRememberCheckbox").checked = true;
-        document.getElementById('loginPasswordImage').setAttribute('src', '../assets/img/hidePassword.png');
+        document.getElementById('loginPasswordImage').setAttribute('src', './assets/img/hidePassword.png');
         document.getElementById('loginPasswordImage').classList.add('cursorPointer');
     }
 }
@@ -36,13 +36,13 @@ function pwInputChanged() {
 
 function togglePasswordImage() {
     if (document.getElementById('loginPassword').value == '') {
-        document.getElementById('loginPasswordImage').setAttribute('src', '../assets/img/lock.png');
+        document.getElementById('loginPasswordImage').setAttribute('src', './assets/img/lock.png');
         document.getElementById('loginPasswordImage').classList.add('pointerEventsNone');
         document.getElementById('loginPasswordImage').classList.remove('cursorPointer');
     }
     else {
         document.getElementById('loginPasswordImage').setAttribute('onclick', 'togglePasswordVisibility();')
-        document.getElementById('loginPasswordImage').setAttribute('src', '../assets/img/hidePassword.png');
+        document.getElementById('loginPasswordImage').setAttribute('src', './assets/img/hidePassword.png');
         document.getElementById('loginPasswordImage').classList.remove('pointerEventsNone');
         document.getElementById('loginPasswordImage').classList.add('cursorPointer');
     }
@@ -52,10 +52,10 @@ function togglePasswordImage() {
 function togglePasswordVisibility() {
     if (document.getElementById('loginPassword').getAttribute('type') == 'password') {
         document.getElementById('loginPassword').setAttribute('type', 'text');
-        document.getElementById('loginPasswordImage').setAttribute('src', '../assets/img/showPassword.png');
+        document.getElementById('loginPasswordImage').setAttribute('src', './assets/img/showPassword.png');
     } else {
         document.getElementById('loginPassword').setAttribute('type', 'password');
-        document.getElementById('loginPasswordImage').setAttribute('src', '../assets/img/hidePassword.png');
+        document.getElementById('loginPasswordImage').setAttribute('src', './assets/img/hidePassword.png');
     }
 }
 
