@@ -191,9 +191,26 @@ function closeEditSaveDeleteContactContainer() {
 
 function openAddTaskContainer(status) {
     currentStatusTemp = status;
+    document.getElementById("newSubtask").innerHTML = '';
+    ifPrioSet();
     document.getElementById('taskBoard').classList.remove('d-none');
     document.getElementById('addTaskContainerContacts').classList.remove('dp-none');
     document.getElementById('taskBoard').classList.remove('moveContainerOutMedia');
+}
+
+function ifPrioSet() {
+    if (document.getElementById('urgent').classList.contains("urgent")) {
+        document.getElementById('urgent').classList.remove("urgent");
+        document.getElementById('urgent-img').src = `../addtask/assets/img/prio-urgent.svg`;
+    }
+    else if (document.getElementById('medium').classList.contains("medium")) {
+        document.getElementById('medium').classList.remove("medium");
+        document.getElementById('medium-img').src = `../addtask/assets/img/prio-medium.svg`;
+    }
+    else if (document.getElementById('low').classList.contains("low")) {
+        document.getElementById('low').classList.remove("low");
+        document.getElementById('low-img').src = `../addtask/assets/img/prio-low.svg`;
+    }
 }
 
 function closeAddTaskContainer() {

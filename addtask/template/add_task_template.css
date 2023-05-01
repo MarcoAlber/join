@@ -476,7 +476,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .clear:hover img {
-  content: url("../../img/cancelHover.png");
+  content: url("../../assets/img/cancelHover.png");
 }
 
 .create {

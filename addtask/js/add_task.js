@@ -366,7 +366,7 @@ async function createTaskTemplate(title, description, date) {
     color: color,
     subTask: subTask,
     contact: assignTo,
-    status: "to do",
+    status: currentStatusTemp,
     subTaskFinish: 0,
     id: currentId,
   });

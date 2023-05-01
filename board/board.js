@@ -132,10 +132,10 @@ function getSubtaskChecked(currentTaskId, j) {
 }
 
 async function deleteTask(id) {
-  currentTaskIndex = tasks.findIndex((t) => t.id == id);
+  let currentTaskIndex = tasks.findIndex((t) => t.id == id);
   tasks.splice(currentTaskIndex, 1);
   await addTasks();
-  updateHtml();
+  await updateHtml();
   closeCard();
 }
 
