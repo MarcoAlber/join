@@ -1,0 +1,232 @@
+@media(max-width: 1300px) {
+    #summary {
+        top: 100px;
+        left: 355px;
+    }
+
+    .headline {
+        margin-bottom: 60px;
+    }
+}
+
+@media(max-width: 1200px) {
+    #summary {
+        left: 355px;
+    }
+
+    .headline {
+        margin-bottom: 35px;
+    }
+
+    .headlineText {
+        font-size: 45px;
+    }
+
+    .headlineSubText {
+        font-size: 30px;
+    }
+
+    .headlineSeparator {
+        height: 45px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .content {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .contentRight {
+        flex-direction: row;
+        margin-top: 50px;
+        margin-left: 0px;
+        gap: 10px;
+    }
+
+    .urgencySummaryMobile {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    #textGreeting {
+        font-size: 30px;
+    }
+
+    #textUserName {
+        font-size: 35px;
+    }
+}
+
+@media(max-width: 980px) {
+    #summary {
+        left: 260px;
+    }
+}
+
+@media(max-width: 900px) {
+    .fadeOut {
+        opacity: 0;
+        transition: opacity 2.5s ease-in;
+    }
+
+    header {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .headline {
+        flex-direction: column;
+        width: 360px;
+        align-self: center;
+        align-items: flex-start;
+        margin-bottom: 0px;
+    }
+
+    .headlineTopText {
+        display: block;
+    }
+
+    .headlineText {
+        font-size: 47px;
+        margin-bottom: 20px;
+    }
+
+    .headlineSubText {
+        font-size: 21px;
+        order: 1;
+    }
+
+    .headlineSeparator {
+        height: 90px;
+        margin-left: 45px;
+        margin-right: 0px;
+        transform: rotate(-90deg);
+        order: 2;
+    }
+
+    #summary {
+        left: 0px;
+        width: -webkit-fill-available;
+    }
+
+    .dataRow {
+        width: 360px;
+    }
+
+    .squareButtonMobile {
+        width: 110px;
+        height: 110px;
+    }
+
+    .urgencySummaryMobile {
+        width: 360px;
+        height: 110px;
+    }
+
+    .pencilRectangleButton {
+        width: 177.5px;
+        height: 110px;
+        gap: 10px;
+    }
+
+    .checkRectangleButton {
+        width: 170.5px;
+        height: 110px;
+        gap: 10px;
+    }
+
+    .textTaskCount {
+        font-size: 47px;
+    }
+
+    .textTaskDescription {
+        font-size: 14px;
+    }
+
+    .urgencySummaryMobile {
+        gap: 35px
+    }
+
+    .tasksUrgentLeft img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tasksUrgentSeperator {
+        height: 68px;
+    }
+
+    .textUrgentDescription {
+        font-size: 14px;
+    }
+
+    #textUrgentDate {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .rectangleButton {
+        width: 170.5px;
+        height: 110px;
+    }
+
+    .rectangleButton img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contentRight {
+        display: none;
+    }
+}
+
+@media(max-width: 400px) {
+    .headline {
+        width: 290px;
+    }
+
+    .headlineTopText {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .headlineText {
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .headlineSubText {
+        font-size: 18px;
+    }
+
+    .headlineSeparator {
+        height: 0;
+        width: 90px;
+        border: solid 2px #29ABE2;
+        border-radius: 0;
+        margin-left: 0;
+        transform: rotate(-180deg);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dataRow {
+        width: 310px;
+    }
+
+    .squareButtonMobile {
+        width: 95px;
+    }
+
+    .urgencySummaryMobile {
+        gap: 10px;
+        width: 305px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .rectangleButton {
+        width: 145px;
+    }
+}

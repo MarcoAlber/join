@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/fonts/fonts.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Add Task</title>
+
+  <link rel="stylesheet" href="./add_task.css" />
+  <link rel="stylesheet" href="./color.css" />
+  <link rel="stylesheet" href="./media.css" />
+  <link rel="stylesheet" href="./prios.css" />
+  <link rel="stylesheet" href="../headerNav/headerNav.css" />
+
+  <script src="../smallest_backend_ever/mini_backend.js"></script>
+  <script src="../login/script.js"></script>
+  <script src="./js/add_task.js"></script>
+  <script src="./js/template.js"></script>
+</head>
+
+<body onload="loadTasks()" onclick="closeAssignList(); closeCategoryList()">
+  <div w3-include-html="../headerNav/headerNav.html" class="header"></div>
+
+  <main>
+    <div class="at-headline">
+      <h1>Add Task</h1>
+    </div>
+
+    <div>
+      <form id="desktop" class="adding-todos" onsubmit="mustFields(); return false">
+        <div class="resp-headline">
+          <div class="resp-headline-child">
+            <button class="resp-create">
+              Create <img src="../assets/img/check.svg" />
+            </button>
+          </div>
+        </div>
+        <div class="adding-tasks">
+          <div class="title">
+            <p class="text">Title</p>
+            <input class="task-board-input-fields" type="text" placeholder="Enter a Title" required id="input-title"
+              maxlength="22" />
+          </div>
+
+          <div class="description">
+            <p class="text">Description</p>
+            <textarea id="input-description" placeholder="Enter a Description" required minlength="3"></textarea>
+          </div>
+
+          <div onclick="event.stopPropagation()">
+            <p class="text">Category</p>
+            <div id="categoryListContainer" class="categoryContainer">
+              <div class="category" onclick="openCategoryList()" id="categoryInput">
+                <div>
+                  <input class="categoryInputField" type="text" placeholder="Enter a Category" id="category" readonly />
+                </div>
+                <div>
+                  <img src="../assets/img/dropdown.svg" />
+                </div>
+              </div>
+              <div id="categoryList" class="d-none categoryList">
+                <p class="text" onclick="newCategory()">New Category</p>
+              </div>
+            </div>
+          </div>
+
+          <div onclick="event.stopPropagation()">
+            <p class="text">Assign to</p>
+            <div id="assignToContainer" class="categoryContainer">
+              <div class="category" onclick="openAssignToList()" id="assignToInput">
+                <div>
+                  <input class="categoryInputField" type="text" placeholder="Assign to" readonly />
+                </div>
+                <div>
+                  <img src="../assets/img/dropdown.svg" />
+                </div>
+              </div>
+              <div id="assignToList" class="d-none categoryList"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="adding-info">
+          <div class="date">
+            <p class="text">Due date</p>
+            <input class="task-board-input-fields" type="date" id="input-date" name="input-date"
+              onclick="disableDateinput();" />
+          </div>
+
+          <p class="text">Prio</p>
+          <div class="prios" id="prios">
+            <div class="prio" id="urgent" onclick="addingPrio('urgent')">
+              <div class="d-flex">
+                <p>Urgent</p>
+                <img id="urgent-img" src="./assets/img/prio-urgent.svg" />
+              </div>
+            </div>
+
+            <div class="prio" id="medium" onclick="addingPrio('medium')">
+              <div class="d-flex">
+                <p>Medium</p>
+                <img id="medium-img" src="./assets/img/prio-medium.svg" />
+              </div>
+            </div>
+
+            <div class="prio" id="low" onclick="addingPrio('low')">
+              <div class="d-flex">
+                <p>Low</p>
+                <img id="low-img" src="./assets/img/prio-low.svg" />
+              </div>
+            </div>
+          </div>
+      </form>
+
+
+      <form onsubmit="createNewSubtask(); return false">
+        <div class="subtask">
+          <p class="text">Subtasks</p>
+          <div class="subtask-input" id="addNewSubtask">
+            <input placeholder="Add new Subtasks" id="input-subTask" readonly onclick="addNewSubtask()" />
+            <img class="plus" src="../assets/img/plus.svg" onclick="addNewSubtask()" />
+          </div>
+          <div class="check">
+            <div class="subtasks" id="newSubtask"></div>
+          </div>
+          <span id="emptySubtask" class="error d-none">name a subtask</span>
+          <div id="addedToBoard"></div>
+        </div>
+      </form>
+
+      <div class="buttons">
+        <button class="clear" onclick="clearAll()">
+          Clear <img src="./assets/img/clear.svg" />
+        </button>
+        <button class="create" type="submit">
+          Create Task<img src="./assets/img/check.svg" />
+        </button>
+      </div>
+    </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<header>
+	<div class="logoHeader" onclick="window.location='../summary/summary.html'"><img src="../assets/img/logoHeader.png">
+	</div>
+	<span class="kanban-headline">Kanban Project Managment Tool</span>
+	<div class="headerProfileAndQuestion">
+		<a href="../help/help.html"><img class="questionmarkHeader" src="../assets/img/questionmarkHeader.png" /></a>
+		<div>
+			<div onclick="openLogoutOption()" class="profileImage" id="profileImage"></div>
+		</div>
+	</div>
+</header>
+<div id="logoutContainer" class="logoutContainer dp-none">
+	<div onclick="window.location='../help/help.html'" id="helpButton" class="logoutButton helpButton dp-none">
+		<span>Help</span>
+	</div>
+	<div onclick="window.location='../legal/legal.html'" id="legalButton" class="logoutButton legalButton dp-none">
+		<span>Legal notice</span>
+	</div>
+	<div onclick="logOut()" class="logoutButton logoutHoverButton">
+		<span>Log out</span>
+	</div>
+</div>
+<nav>
+	<div class="navbar-logo" onclick="window.location='../summary/summary.html'">
+		<img src="../assets/img/logo.png" alt="Logo" />
+	</div>
+	<div class="navbar-fields">
+		<a href="../summary/summary.html">
+			<div id="summaryNav" class="navbarRows">
+				<div><img src="../assets/img/summaryNav.png" /></div>
+				<span>Summary</span>
+			</div>
+		</a>
+		<a href="../board/board.html">
+			<div id="boardNav" class="navbarRows">
+				<div><img src="../assets/img/boardNav.png" /></div>
+				<span>Board</span>
+			</div>
+		</a>
+		<a href="../addtask/add_task.html">
+			<div id="addTaskNav" class="navbarRows">
+				<div><img src="../assets/img/addTaskNav.png" /></div>
+				<span>Add Task</span>
+			</div>
+		</a>
+		<a href="../contacts/contacts.html">
+			<div id="contactsNav" class="navbarRows">
+				<div><img src="../assets/img/contactsNav.png" /></div>
+				<span>Contacts</span>
+			</div>
+		</a>
+	</div>
+	<div id="legalNav" onclick="window.location='../legal/legal.html'" class="legalNoticeContainerNav">
+		<div><img src="../assets/img/legalNotice.png"></div>
+		<span>Legal notice</span>
+	</div>
+</nav>

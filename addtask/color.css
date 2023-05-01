@@ -1,0 +1,42 @@
+.chooseColor {
+  height: 20px;
+  margin-top: 20px;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-container {
+  border-radius: 50%;
+  height: 12.5px;
+  width: 12.5px;
+}
+
+.blue {
+  background-color: #8aa4ff;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.darkblue {
+  background-color: blue;
+}
+
+.active-color {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+}

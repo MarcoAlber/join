@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png" />
+    <link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="stylesheet" href="./summary.css">
+    <link rel="stylesheet" href="./media.css">
+    <link rel="stylesheet" href="../headerNav/headerNav.css">
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <script src="../smallest_backend_ever/mini_backend.js"></script>
+    <script src="../login/script.js"></script>
+    <script src="./summary.js"></script>
+    <title>Summary</title>
+</head>
+
+<body onload="initSummary()">
+    <div w3-include-html="../headerNav/headerNav.html"></div>
+    <div id="welcomeScreen" class="invisible">
+        <span id="welcomeGreeting"></span>
+        <span id="welcomeUserName"></span>
+    </div>
+    <div id="summary" class="invisible">
+        <div class="headline">
+            <span class="headlineTopText">Kanban Project Managment Tool</span>
+            <span class="headlineText">Summary</span>
+            <div class="headlineSeparator"></div>
+            <span class="headlineSubText">Everything in a nutshell!</span>
+        </div>
+        <div class="content">
+            <div class="contentLeft">
+                <div class="dataRow">
+                    <div class="squareButtonMobile" onmouseover="hoverColorChange('textTaskCountDescription','#FFFFFF')"
+                        onmouseout="hoverColorChange('textTaskCountDescription','#2A3647')" onclick="linkToBoard()">
+                        <span class="textTaskCount" id="totalTaskCount">0</span>
+                        <span class="textTaskDescription" id="textTaskCountDescription">Tasks in<br>Board</span>
+                    </div>
+                    <div class="squareButtonMobile"
+                        onmouseover="hoverColorChange('textTaskProgressDescription','#FFFFFF')"
+                        onmouseout="hoverColorChange('textTaskProgressDescription','#2A3647')" onclick="linkToBoard()">
+                        <span class="textTaskCount" id="inProgressTaskCount">0</span>
+                        <span class="textTaskDescription" id="textTaskProgressDescription">Tasks in<br>Progress</span>
+                    </div>
+                    <div class="squareButtonMobile"
+                        onmouseover="hoverColorChange('textTaskAwaitingDescription','#FFFFFF')"
+                        onmouseout="hoverColorChange('textTaskAwaitingDescription','#2A3647')" onclick="linkToBoard()">
+                        <span class="textTaskCount" id="awaitingFeedbackTaskCount">0</span>
+                        <span class="textTaskDescription" id="textTaskAwaitingDescription">Awaiting<br>Feedback</span>
+                    </div>
+                </div>
+                <div class="urgencySummaryMobile" onmouseover="hoverColorChange('textUrgentDate','#FFFFFF')"
+                    onmouseout="hoverColorChange('textUrgentDate','#2A3647')" onclick="linkToBoard()">
+                    <div class="tasksUrgentLeft">
+                        <img src="../assets/img/urgent.png">
+                        <div class="tasktUrgentCount">
+                            <span id="urgentTaskCount">0</span>
+                            <span class="textUrgentDescription">Urgent</span>
+                        </div>
+                    </div>
+                    <div class="tasksUrgentSeperator">
+                    </div>
+                    <div class="tasksUrgentDate">
+                        <span id="textUrgentDate"></span>
+                        <span id="textUrgentDescription">Upcoming Deadline</span>
+                    </div>
+                </div>
+                <div class="dataRow">
+                    <div class="rectangleButton"
+                        onmouseover="hoverSrcChange('imgPencil','../assets/img/pencilInverted.png'), hoverColorChange('textBacklogDescription','#FFFFFF')"" onmouseout="
+                        hoverSrcChange('imgPencil','../assets/img/pencil.png'),
+                        hoverColorChange('textBacklogDescription','#2A3647')" onclick="linkToBoard()">
+                        <img id="imgPencil" src="../assets/img/pencil.png">
+                        <div class="pencilRectangleButtonText">
+                            <span class="textTaskCount" id="toDoTaskCount">0</span>
+                            <span class="textTaskDescription" id="textBacklogDescription">To-do</span>
+                        </div>
+                    </div>
+                    <div class="rectangleButton"
+                        onmouseover="hoverSrcChange('imgCheck','../assets/img/checkInverted.png'), hoverColorChange('textDoneDescription','#FFFFFF')"
+                        onmouseout="hoverSrcChange('imgCheck','../assets/img/check.png'), hoverColorChange('textDoneDescription','#2A3647')"
+                        onclick="linkToBoard()">
+                        <img id="imgCheck" src="../assets/img/check.png">
+                        <div class="checkRectangleButtonText">
+                            <span class="textTaskCount" id="doneTaskCount">0</span>
+                            <span class="textTaskDescription" id="textDoneDescription">Done</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contentRight">
+                <span id="textGreeting"></span>
+                <span id="textUserName"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

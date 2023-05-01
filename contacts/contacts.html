@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./contacts.css">
+    <link rel="stylesheet" href="./addContact.css">
+    <link rel="stylesheet" href="./contactsMedia.css">
+    <link rel="stylesheet" href="./addContactsMedia.css">
+    <link rel="stylesheet" href="../headerNav/headerNav.css">
+    <link rel="stylesheet" href="../login/index.css">
+    <link rel="stylesheet" href="../addtask/template/add_task_template.css">
+    <link rel="stylesheet" href="../addtask/template/add_task_media.css">
+    <link rel="stylesheet" href="../addtask/prios.css">
+    <link rel="stylesheet" href="../addtask/color.css">
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+    <script src="../login/script.js"></script>
+    <script src="../smallest_backend_ever/mini_backend.js"></script>
+    <script src="../addtask/js/add_task.js"></script>
+    <script src="../addtask/js/template.js"></script>
+    <script src="./contacts.js"></script>
+    <script src="./contactsTemplates.js"></script>
+    <title>Contacts</title>
+</head>
+
+<body onload="renderContacts()">
+
+    <div w3-include-html="../headerNav/headerNav.html"></div>
+
+    <div class="contactsContainer">
+        <div id="contactsAdressContainer" class="contactsAdressContainer">
+
+        </div>
+        <div id="contactDetails" class="contactsRightContainer">
+
+        </div>
+    </div>
+    <div id="addContactContainer" class="addContactContainer dp-none">
+        <div class="addContactLeftContainer">
+            <div class="logoAddContact"><img src="../assets/img/logo.png"></div>
+            <span class="addContactHeadline">Add contact</span>
+            <span class="tasksAreBetter">Tasks are better with a team!</span>
+            <div class="addContactLine"></div>
+        </div>
+        <div class="addContactProfileImg"><img src="../assets/img/emptyImg.png"></div>
+
+        <div onclick="closeNewContactContainer()" class="closeAddContact"><img src="../assets/img/close.png"></div>
+
+        <form onsubmit="addContact(); return false">
+            <div class="addContactInputContainer">
+                <input id="addContactFirstNameInput" placeholder="First name" required maxlength="10" type="text"
+                    onkeydown="return /[a-z]/i.test(event.key)"
+                    style="background-image: url(../assets/img/nameInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+                <input id="addContactSurnameInput" placeholder="Surname" required maxlength="12" type="text"
+                    onkeydown="return /[a-z]/i.test(event.key)"
+                    style="background-image: url(../assets/img/nameInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+                <input id="addContactMailInput" placeholder="Email" required maxlength="40" type="email"
+                    style="background-image: url(../assets/img/emailInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+                <input id="addContactPhoneInput" placeholder="Phone" required
+                    onKeyPress="if(this.value.length==20) return false;" onkeydown="return event.keyCode !== 69"
+                    type="number"
+                    style="background-image: url(../assets/img/phoneInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+                <span class="error dp-none" id="emailIsAlreadyExistingAddContact">Email is already existing</span>
+            </div>
+            <div class="buttonsAddContactContainer">
+                <div onclick="closeNewContactContainer()" class="cancelButton">
+                    <span>Cancel</span>
+                    <div><img src="../assets/img/cancel.png"></div>
+                </div>
+                <button class="createContactButton">
+                    <span>Create contact</span>
+                    <div><img src="../assets/img/create.png"></div>
+                </button>
+            </div>
+        </form>
+
+    </div>
+    <div id="contactCreated" class="contactCreated dp-none">
+        <span>Contact succesfully created</span>
+    </div>
+    <div id="contactDeleted" class="contactCreated dp-none">
+        <span>Contact succesfully deleted</span>
+    </div>
+    <div onclick="closeNewContactContainer(); closeEditContactContainer()" id="bg-contacts" class="bg-contacts dp-none">
+    </div>
+
+    <div onclick="openNewContactContainer()" id="contactsNewContact" class="contactsNewContact">
+        <span>New contact</span>
+        <img src="../assets/img/addSymbol.png" alt="add symbol">
+    </div>
+
+
+    <div id="addTaskContainerContacts" class="addTaskContainerContacts dp-none">
+        <div class="addTaskContainerInput">
+            <div class="positionAddTask" w3-include-html="../addtask/template/add_task_template.html"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+    background: rgba(246, 247, 248, 1);
+}
+
+input::placeholder {
+    color: lightgray;
+}
+
+header {
+    padding: 50px;
+}
+
+header img {
+    height: 120px;
+    width: 120px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25vh;
+}
+
+.reset-container {
+    height: 400px;
+    width: 650px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+    border: unset;
+    padding: 20px;
+}
+
+.reset-headline {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.reset-headline img {
+    margin-top: 20px;
+    margin-left: -20px;
+    cursor: pointer;
+}
+
+.reset-headline h1 {
+    font-size: 50px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-headline {
+    border-top: 3px solid rgba(41, 171, 226, 1);
+}
+
+.change-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.change-password input {
+    height: 30px;
+    width: 420px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    font-family: 'Inter';
+}
+
+.continue {
+    margin-top: 40px;
+}
+
+.continue button {
+    height: 30px;
+    width: 200px;
+    padding: 4px 0px;
+    border-radius: 10px;
+    border: unset;
+    background: rgba(42, 54, 71, 1);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Inter';
+    cursor: pointer;
+}
+
+.continue button:hover {
+    background: #29ABE2;
+}
+
+.error {
+    color: red;
+}
+
+.d-none {
+    display: none;
+}

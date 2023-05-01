@@ -1,0 +1,527 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.bg-contacts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.26);
+    z-index: 50;
+}
+
+.d-none {
+    display: none;
+}
+
+.contactCreated {
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 326px;
+    height: 74px;
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 51;
+    animation: contactCreatedButton 0.5s forwards;
+}
+
+@keyframes contactCreatedButton {
+    from {
+        bottom: -100px;
+    }
+
+    to {
+        bottom: 100px;
+    }
+}
+
+@keyframes contactCreatedButtonOut {
+    from {
+        bottom: 100px;
+    }
+
+    to {
+        bottom: -100px;
+    }
+}
+
+.contactCreatedButton {
+    animation: contactCreatedButtonOut 0.5s forwards;
+}
+
+.contactCreated span {
+    height: 25px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.contactsContainer {
+    position: absolute;
+    left: 232px;
+    top: 89px;
+    width: calc(100% - 232px);
+    display: flex;
+}
+
+.contactsAdressContainer {
+    z-index: 1;
+    width: 453px;
+    height: calc(100vh - 89px);
+    overflow-y: auto;
+    background: #FFFFFF;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contactsAdressContainer::-webkit-scrollbar {
+    width: 3px;
+}
+
+.contactsAdressContainer::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.contactsAdressContainer::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.contactsAdressContainer::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.adressSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    width: 357px;
+    padding-left: 48px;
+    background: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.lettersAdress {
+    width: 282px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.arrowLeft {
+    display: none;
+}
+
+.lineAdress {
+    width: 323px;
+    height: 0px;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.adressField {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    width: 357px;
+    min-height: 75px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.adressMail {
+    color: #007CEE;
+}
+
+.adressField:hover {
+    background: #2A3647;
+    cursor: pointer;
+}
+
+.adressField:hover .adressName {
+    color: #FFFFFF;
+}
+
+.adressImgField div {
+    margin-left: 25px;
+    width: 42px;
+    height: 42px;
+}
+
+.adressNameContainer {
+    display: flex;
+    flex-direction: column;
+    word-break: break-word;
+}
+
+.contactsRightContainer {
+    background: #F5F5F5;
+    width: calc(100% - 453px);
+    height: calc(100vh - 89px);
+}
+
+.kanbanResponsive {
+    display: none;
+}
+
+.contactsHeadlineContainer {
+    position: fixed;
+    top: 171px;
+    left: 743px;
+    height: 73px;
+    display: flex;
+    align-items: center;
+}
+
+.contactsHeadline {
+    height: 73px;
+    margin-right: 30px;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.contactsTextBreakLine {
+    width: 0px;
+    height: 59px;
+    border: 2px solid #29ABE2;
+    flex: flex;
+    order: 1;
+    flex-grow: 0;
+}
+
+.contactsBetterWithATeam {
+    margin-left: 30px;
+    height: 32px;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 120%;
+    color: #2A3647;
+    order: 2;
+    flex-grow: 0;
+}
+
+.adressDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 21px;
+    position: relative;
+    height: 0;
+    width: calc(100% - 232px);
+    left: 65px;
+    top: 237px;
+    background: #F5F5F5;
+}
+
+.adressDetailsImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 47px;
+}
+
+.adressImgPlusName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 54px;
+    height: 120px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.adressImg {
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.adressNamePlusAddTask {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 13px;
+    order: 1;
+    flex-grow: 0;
+}
+
+.nameDetailAdress {
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.adressAddTaskContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 13px;
+    width: 128px;
+    height: 19px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+.adressAddTaskContainer img {
+    display: flex;
+    align-items: center;
+}
+
+.adressAddTaskContainer span {
+    width: 100px;
+    height: 19px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #29ABE2;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.contactInformationContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 59px;
+    width: 392.85px;
+    height: 74px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.editContactContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 6px;
+    cursor: pointer;
+    width: 126.85px;
+    height: 29.34px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.editContactContainer img {
+    display: flex;
+    align-items: center;
+}
+
+.contactInfoHeadline {
+    width: 207px;
+    height: 74px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.emailPlusPhoneContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 22px;
+    height: 128px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin-left: 5px;
+}
+
+.emailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.phoneContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    height: 53px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.emailHeadline {
+    width: 43px;
+    height: 19px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.emailAdress {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    word-break: break-all;
+}
+
+.emailAdress a {
+    text-decoration: none;
+    color: #007CEE;
+}
+
+.phoneHeadline {
+    width: 50px;
+    height: 19px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.phoneNumber {
+    height: 19px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.phoneNumber a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.contactsNewContact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    width: 193px;
+    height: 53px;
+    left: auto;
+    right: 52px;
+    top: auto;
+    bottom: 67px;
+    background: #2A3647;
+    border-radius: 10px;
+    z-index: 12;
+    cursor: pointer;
+}
+
+.contactsNewContact:hover {
+    background: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contactsNewContact span {
+    width: 130px;
+    height: 25px;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

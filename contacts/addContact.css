@@ -1,0 +1,426 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.addContactContainer {
+    display: flex;
+    z-index: 51;
+    width: 1212px;
+    height: 594px;
+    position: relative;
+    top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFFFFF;
+    border-radius: 30px;
+    animation: moveContainerInMedia 0.8s forwards;
+}
+
+.moveContainerInMedia {
+    animation: moveContainerInMedia 0.8s forwards;
+}
+
+.moveContainerOutMedia {
+    animation: moveContainerOutMedia 0.8s forwards;
+}
+
+.editContactForm {
+    z-index: 51;
+    width: 1212px;
+    height: 594px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFFFFF;
+    border-radius: 30px;
+    animation: moveEditContainerInMedia 0.8s forwards;
+}
+
+.moveEditContainerInMedia {
+    animation: moveEditContainerInMedia 0.8s forwards;
+}
+
+.moveEditContainerOutMedia {
+    animation: moveEditContainerOutMedia 0.8s forwards;
+}
+
+.d-none {
+    display: none;
+}
+
+.editContactAround {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 20vh;
+}
+
+.trashIcon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    display: flex;
+    position: absolute;
+    left: 765px;
+    top: 483px;
+    cursor: pointer;
+}
+
+.addContactLeftContainer {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 46px;
+    gap: 12px;
+    isolation: isolate;
+    position: absolute;
+    width: 463px;
+    height: 594px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #2A3647;
+}
+
+.logoAddContact img {
+    position: absolute;
+    left: 10.04%;
+    right: 78.05%;
+    top: 25.93%;
+    bottom: 62.88%;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    z-index: 3;
+    width: 55.12px;
+    height: 66.48px;
+}
+
+.addContactHeadline {
+    width: 366px;
+    height: 73px;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+
+.tasksAreBetter {
+    width: 371px;
+    height: 32px;
+    font-weight: 300;
+    font-size: 27px;
+    line-height: 120%;
+    color: #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 1;
+}
+
+.addContactLine {
+    width: 90px;
+    height: 0px;
+    border: 2px solid #29ABE2;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    z-index: 2;
+}
+
+.addContactProfileImg {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 543px;
+    top: 198px;
+}
+
+.addContactProfileImg div {
+    width: 120px;
+    height: 120px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 47px;
+}
+
+.closeAddContact {
+    position: absolute;
+    width: 21.65px;
+    height: 21.65px;
+    left: 1141.31px;
+    top: 26px;
+    cursor: pointer;
+}
+
+.addContactInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 35px;
+    position: absolute;
+    width: 422px;
+    height: 271px;
+    left: 737px;
+    top: 105px;
+}
+
+.addContactInputContainer input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 21px;
+    gap: 10px;
+    width: 422px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.addContactInputContainer input::placeholder {
+    color: #D1D1D1;
+    font-size: 21px;
+}
+
+.buttonsAddContactContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    position: absolute;
+    width: 369px;
+    height: 61px;
+    left: 737px;
+    top: 480px;
+}
+
+.cancelButton {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 136px;
+    height: 61px;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    cursor: pointer;
+}
+
+.cancelButton:hover {
+    border: 1px solid #29ABE2;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cancelButton img {
+    display: flex;
+    align-items: center;
+}
+
+.cancelButton span {
+    font-weight: 400;
+    font-size: 21px;
+    color: #2A3647;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.cancelButton:hover span {
+    color: #29ABE2;
+}
+
+.cancelButton:hover img {
+    content: url("../assets/img/cancelHover.png")
+}
+
+.createContactButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 208px;
+    height: 61px;
+    background: #2A3647;
+    border-radius: 10px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    cursor: pointer;
+    border: none;
+}
+
+.createContactButton:hover {
+    background: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.createContactButton img {
+    display: flex;
+    align-items: center;
+}
+
+.createContactButton span {
+    font-weight: 700;
+    font-size: 21px;
+    color: #FFFFFF;
+}
+
+.dp-none {
+    display: none;
+}
+
+.saveButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    position: absolute;
+    width: 143px;
+    height: 61px;
+    left: 877px;
+    top: 475px;
+}
+
+.saveButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 10px;
+    width: 143px;
+    height: 61px;
+    background: #2A3647;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border: none;
+}
+
+.saveButton:hover {
+    background: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.saveText {
+    width: 123px;
+    height: 25px;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    text-align: center;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.positionAddTask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.addTaskContainerContacts {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    z-index: 13;
+    top: 13vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addTaskContainerInput {
+    position: absolute;
+    height: 788px;
+
+    top: -100px;
+}
+
+.closeAddTask {
+    position: absolute;
+    width: 21.65px;
+    height: 21.65px;
+    left: 1050px;
+    top: 26px;
+    cursor: pointer;
+}
+
+@keyframes moveContainerInMedia {
+    from {
+        left: -150%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes moveContainerOutMedia {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -150%;
+    }
+}
+
+@keyframes moveEditContainerInMedia {
+    from {
+        left: -300%;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@keyframes moveEditContainerOutMedia {
+    from {
+        right: 0;
+    }
+
+    to {
+        left: -300%;
+    }
+}

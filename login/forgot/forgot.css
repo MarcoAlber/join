@@ -1,0 +1,196 @@
+.forgotContainerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    isolation: isolate;
+    position: absolute;
+    width: 826px;
+    height: 462px;
+    left: calc(50% - 826px/2);
+    top: calc(50% - 462px/2 - 0.5px);
+    background: #FFFFFF;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+}
+
+.forgotHeadline {
+    margin-top: 44px;
+    width: 626px;
+    height: 73px;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.forgotInstructions {
+    width: 656px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 1;
+}
+
+.forgotForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+.forgotContainerContent input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 422px;
+    height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    padding: 13px 21px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.forgotContainerContent input::placeholder {
+    color: #D1D1D1;
+}
+
+.forgotButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
+    width: 264px;
+    height: 51px;
+    background: #2A3647;
+    border-radius: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.forgotButton:hover {
+    background: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.eMailHasBeenSent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 415px;
+    height: 74px;
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.eMailHasBeenSent img {
+    width: 41px;
+    height: 41px;
+}
+
+.eMailHasBeenSent span {
+    font-size: 21px;
+    color: #FFFFFF;
+}
+
+@media(max-width: 850px) {
+    .forgotContainerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        isolation: isolate;
+        position: absolute;
+        width: 372px;
+        height: 502px;
+        left: auto;
+        top: auto;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+        border-radius: 30px;
+    }
+
+    .forgotHeadline {
+        width: 315px;
+        height: 96px;
+        font-size: 40px;
+    }
+
+    .forgotInstructions {
+        width: 322px;
+        height: 75px;
+        font-size: 21px;
+    }
+
+    .forgotContainerContent input {
+        gap: 10px;
+        width: 327px;
+        height: 41px;
+        border: 1px solid #D1D1D1;
+        border-radius: 10px;
+    }
+
+    .forgotButton {
+        width: 180px;
+        height: 51px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 400px) {
+    .forgotContainerContent {
+        width: 300px;
+        height: 465px;
+        gap: 25px;
+    }
+
+    .forgotHeadline {
+        width: 290px;
+        font-size: 35px;
+    }
+
+    .forgotInstructions {
+        width: 290px;
+        font-size: 17px;
+    }
+
+    .forgotContainerContent input {
+        width: 280px;
+    }
+}

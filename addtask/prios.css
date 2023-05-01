@@ -1,0 +1,17 @@
+.urgent {
+    background-color: #FF3D00;
+    color: white;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.medium {
+    background-color: #ffa800;
+    color: white;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.low {
+    background-color: #7ae229;
+    color: white;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.4);
+}

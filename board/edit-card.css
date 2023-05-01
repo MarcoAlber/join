@@ -1,0 +1,126 @@
+.closeImgEdit {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    cursor: pointer;
+}
+
+.closeImgEdit img {
+    width: 25px;
+    height: 25px;
+}
+
+.editCardContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.editDescription {
+    padding: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    resize: none;
+    padding-left: 10px;
+    font-size: 21px;
+    gap: 10px;
+    width: 310px;
+    height: 74px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.editDescription::placeholder {
+    color: #D1D1D1;
+    font-size: 21px;
+}
+
+.profileImgEdit {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    width: 315px;
+    flex-wrap: wrap;
+    height: 53px;
+    overflow-y: auto;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.profileImgEdit::-webkit-scrollbar {
+    width: 3px;
+}
+
+.profileImgEdit::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.profileImgEdit::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.profileImgEdit::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.profilePictureEdit {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.profilePictureEdit img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 26px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.dp-none {
+    display: none;
+}
+
+.okButton {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 85px;
+    height: 51px;
+    background: #2A3647;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.okButton:hover {
+    background: #29ABE2;
+}
+
+.okButton span {
+    color: #FFFFFF;
+    width: 31px;
+    height: 25px;
+    font-weight: 700;
+    font-size: 21px;
+}

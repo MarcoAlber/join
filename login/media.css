@@ -1,0 +1,157 @@
+@media(max-width: 690px) {
+
+    .changeBgColor {
+        animation: changeBgColor 1s ease-in-out;
+    }
+
+    @keyframes changeBgColor {
+        0% {
+            background-color: #2A3647;
+        }
+
+        100% {
+            background-color: #F6F7F8;
+        }
+    }
+
+    .logo {
+        width: 64px;
+        top: 37px;
+        left: 38px;
+    }
+
+    .fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0%;
+        }
+
+        40% {
+            opacity: 0%;
+        }
+
+        100% {
+            opacity: 100%;
+        }
+    }
+
+    .moveLogo {
+        animation: moveLogo 1s ease-in-out;
+        z-index: 10;
+    }
+
+    @keyframes moveLogo {
+        0% {
+            top: 50vh;
+            left: 50vw;
+            width: 100px;
+            transform: translate(-50%, -50%);
+            content: url("./assets/img/logo.png");
+        }
+
+        25% {
+            transform: translate(-50%, -50%);
+        }
+
+        100% {
+            top: 37px;
+            left: 38px;
+            width: 64px;
+        }
+    }
+
+    #loginBox {
+        width: 372px;
+        height: 573px;
+        top: 194px;
+    }
+
+    .loginHeadlineText {
+        font-size: 47px;
+    }
+
+    .loginHeadlineSeperator {
+        width: 88px;
+        margin-bottom: 6px;
+    }
+
+    .loginInputField {
+        width: 327px;
+    }
+
+    .loginRememberMeForgotPassword {
+        flex-direction: column-reverse;
+    }
+
+    .loginButtons {
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+
+    }
+
+    .loginButton {
+        width: 180px;
+        font-size: 16px;
+    }
+
+    .loginGuestButton {
+        width: 180px;
+        font-size: 16px;
+    }
+
+    .loginPage {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+    #signUpButton {
+        top: unset;
+        bottom: 59px;
+        right: unset;
+    }
+}
+
+@media (max-height: 933px) {
+    #signUpButton {
+        right: unset;
+        bottom: 10px;
+        top: unset;
+    }
+}
+
+@media (max-height: 880px) {
+    #loginBox {
+        top: 140px;
+    }
+}
+
+@media (max-height: 825px) {
+    #signUpButton {
+        bottom: unset;
+        top: 48px;
+        right: 10px;
+        gap: 5px;
+    }
+
+    .signInText {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    #loginBox {
+        width: 290px;
+        padding: 0;
+    }
+
+    .loginInputField {
+        width: 250px;
+        font-size: 16px;
+    }
+}

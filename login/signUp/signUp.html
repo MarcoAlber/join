@@ -1,0 +1,21 @@
+<div onclick="goBackToLogin()" class="arrowBackSignUp"><img src="./assets/img/arrow_left_blue.png"></div>
+<span class="signUpHeadline">Sign up</span>
+<div class="signUpLine"></div>
+<form class="signUpInputContainer" onsubmit="event.preventDefault(); signUp();">
+    <input id="signUpFirstNameInput" placeholder="First name" required maxlength="10" type="text"
+        onkeydown="return /[a-z]/i.test(event.key)"
+        style="background-image: url(./assets/img/nameInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+    <input id="signUpSurnameInput" placeholder="Surname" required maxlength="12" type="text"
+        onkeydown="return /[a-z]/i.test(event.key)"
+        style="background-image: url(./assets/img/nameInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+    <input id="signUpMailInput" placeholder="Email" required maxlength="40" type="email"
+        style="background-image: url(./assets/img/emailInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+    <div class="signUpFieldContainer">
+        <input id="signUpPasswordInput" required type="password" placeholder="Password"
+            onkeyup="togglePasswordImageSignUp()">
+        <img id="signUpPasswordImage" class="signUpFieldImage pointerEventsNone" src="./assets/img/lock.png"
+            onclick="togglePasswordVisibilitySignUp()">
+    </div>
+    <button type="submit" class="buttonContainer"><span>Sign up</span></button>
+    <span class="error dp-none" id="emailIsAlreadyExistingSignUp">Email is already existing</span>
+</form>

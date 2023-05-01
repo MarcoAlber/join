@@ -1,0 +1,267 @@
+@media(max-width: 1590px) {
+    .nameDetailAdress {
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 1480px) {
+    .nameDetailAdress {
+        font-size: 35px;
+    }
+
+    .adressImgPlusName {
+        gap: 15px;
+    }
+}
+
+@media(max-width: 1375px) {
+    .contactsAdressContainer {
+        width: 250px;
+    }
+
+    .contactsRightContainer {
+        width: calc(100% - 250px);
+    }
+
+    .contactsHeadlineContainer {
+        left: 495px;
+    }
+
+    .contactsHeadline {
+        font-size: 51px;
+        margin-right: 15px;
+    }
+
+    .contactsBetterWithATeam {
+        margin-left: 15px;
+    }
+
+    .adressSection {
+        width: 247px;
+        padding-left: 0;
+    }
+
+    .adressDetails {
+        left: 25px;
+    }
+
+    .lettersAdress {
+        width: 175px;
+    }
+
+    .lineAdress {
+        width: 200px;
+    }
+
+    .adressField {
+        gap: 10px;
+        width: 240px;
+    }
+
+    .adressImgField div {
+        margin-left: 5px;
+    }
+
+    .nameDetailAdress {
+        font-size: 37px;
+    }
+
+    .adressNameContainer {
+        max-width: 115px;
+    }
+}
+
+@media(max-width: 1160px) {
+    .nameDetailAdress {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 1070px) {
+    .nameDetailAdress {
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .contactsRightContainer {
+        display: none;
+        width: 100%;
+    }
+
+    .contactsHeadlineContainer {
+        left: 257px;
+    }
+
+    .contactsAdressContainer {
+        margin-top: 75px;
+        width: 100%;
+        height: calc(100vh - 164px);
+        box-shadow: none;
+    }
+
+    .adressSection {
+        width: 100%;
+    }
+
+    .lettersAdress {
+        width: 90%;
+    }
+
+    .lineAdress {
+        width: 95%;
+    }
+
+    .arrowLeft {
+        display: block;
+        position: fixed;
+        left: auto;
+        right: 20px;
+        top: 125px;
+        cursor: pointer;
+        z-index: 12;
+    }
+
+    .adressField {
+        gap: 10px;
+        width: 90%;
+    }
+
+    .adressNameContainer {
+        max-width: 95%;
+    }
+
+    .contactsNewContact {
+        right: 10px;
+        bottom: auto;
+        top: 100px;
+    }
+}
+
+@media(max-width: 900px) {
+    .contactsContainer {
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .contactsBetterWithATeam {
+        margin-left: 0;
+    }
+
+    .contactsTextBreakLine {
+        position: absolute;
+        top: 120px;
+    }
+
+    .contactsRightContainer {
+        justify-content: center;
+        padding-left: 20px;
+    }
+
+    .contactsHeadlineContainer {
+        left: auto;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        margin-right: 150px;
+    }
+
+    .contactsTextBreakLine {
+        width: 59px;
+        height: 0px;
+        margin-right: 160px;
+    }
+
+    .kanbanResponsive {
+        display: block;
+        height: 19px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: #000000;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .adressImgField {
+        margin-left: 10px;
+    }
+
+    .contactsAdressContainer {
+        height: calc(100vh - 234.02px);
+    }
+
+    .contactsNewContact {
+        top: 90px;
+    }
+
+    .adressDetails {
+        width: auto;
+        left: -25px;
+    }
+}
+
+@media(max-width: 550px) {
+    .adressDetailsImg {
+        width: 80px;
+        height: 80px;
+        font-size: 27px;
+    }
+
+    .contactsContainer {
+        overflow-y: auto;
+    }
+
+    .contactsContainer::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .contactsContainer::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .contactsContainer::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    .contactsContainer::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .editContactContainer {
+        content: url("../assets/img/editResponsive.png");
+        object-fit: cover;
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        right: 25px;
+        bottom: 115px;
+    }
+
+    .emailAdress {
+        width: 250px;
+    }
+
+    .contactInformationContainer {
+        width: auto;
+    }
+
+    .contactsHeadlineContainer {
+        left: auto;
+        margin-right: 50px;
+        position: absolute;
+        top: 90px;
+    }
+}
+
+@media(max-width: 400px) {
+    .nameDetailAdress {
+        word-break: break-word;
+    }
+
+    .emailAdress {
+        width: 170px;
+    }
+}

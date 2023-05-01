@@ -1,0 +1,18 @@
+<div onclick="goBackToLoginOfForgot()" class="arrowBackSignUp"><img src="./assets/img/arrow_left_blue.png"></div>
+
+<span class="forgotHeadline">I forgot my password</span>
+<div class="signUpLine"></div>
+<span class="forgotInstructions">Don't worry! We will send you an email with the instructions to reset your
+    password.</span>
+<form id="formForgot" onsubmit="forgotPassword(event)" class="forgotForm" method="POST">
+    <input id="forgotMailInput" placeholder="Email" required maxlength="40" type="email" name="email"
+        style="background-image: url(./assets/img/emailInput.png); background-repeat: no-repeat; background-position: calc(100% - 19px);">
+    <button class="forgotButton">Send me the email</button>
+    <span class="error dp-none" id="emailIsNotExisting">Email is not existing</span>
+</form>
+<div id="eMailHasBeenSent" class="eMailHasBeenSent dp-none">
+
+    <img src="./assets/img/sendCheck.png">
+    <span>An E-Mail has been sent to you</span>
+
+</div>

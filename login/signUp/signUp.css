@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    background: #F6F7F8;
+}
+
+.dp-none {
+    display: none !important;
+}
+
+.signUpContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.signUpContainerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    isolation: isolate;
+    position: absolute;
+    width: 652px;
+    height: 559px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+    gap: 35px;
+}
+
+.arrowBackSignUp {
+    position: absolute;
+    left: 31px;
+    top: 35px;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.signUpHeadline {
+    margin-top: 20px;
+    width: 315px;
+    height: 73px;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.signUpLine {
+    width: 150px;
+    height: 0px;
+    border: 2px solid #29ABE2;
+    transform: rotate(180deg);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.signUpContainerContent input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    padding: 13px 21px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.signUpContainerContent input::placeholder {
+    color: #D1D1D1;
+}
+
+.pointerEventsNone {
+    pointer-events: none;
+}
+
+.signUpFieldContainer {
+    display: flex;
+    width: 100%;
+}
+
+.signUpFieldImage {
+    margin-left: -40px;
+    object-fit: none;
+}
+
+.signUpInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 29px;
+    width: 422px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 1;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    gap: 10px;
+    width: 145px;
+    height: 51px;
+    background: #2A3647;
+    border-radius: 8px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    z-index: 2;
+    cursor: pointer;
+    border: none;
+}
+
+.buttonContainer:hover {
+    background: #29ABE2;
+}
+
+.buttonContainer span {
+    width: 78px;
+    height: 25px;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+@media(max-width: 700px) {
+    .signUpContainerContent {
+        width: 372px;
+        height: 501px;
+    }
+
+    .signUpHeadline {
+        width: 315px;
+        height: 56px;
+        font-weight: 700;
+        font-size: 47px;
+        line-height: 120%;
+    }
+
+    .signUpLine {
+        width: 88px;
+    }
+
+    .arrowBackSignUp {
+        width: 24px;
+        height: 24px;
+        left: 29px;
+        top: 23px;
+    }
+
+    .signUpInputContainer {
+        width: 327px;
+        gap: 18px;
+    }
+
+    .signUpContainerContent input {
+        width: 327px;
+        height: auto;
+        padding: 10px 21px;
+    }
+}
+
+@media(max-width: 400px) {
+    .signUpContainerContent {
+        width: 300px;
+    }
+
+    .arrowBackSignUp {
+        left: 10px;
+    }
+
+    .signUpInputContainer {
+        width: 280px;
+    }
+
+    .signUpContainerContent input {
+        width: 280px;
+    }
+}

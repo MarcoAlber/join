@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../assets/fonts/fonts.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="../../assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Reset your Password</title>
+  <link rel="stylesheet" href="./reset.css" />
+  <link rel="stylesheet" href="./media.css" />
+
+  <script src="../script.js"></script>
+  <script src="../../smallest_backend_ever/mini_backend.js"></script>
+  <script src="../../contacts/contacts.js"></script>
+  <script src="./reset.js"></script>
+</head>
+
+<body onload="initIndex();">
+
+  <main>
+    <div>
+      <form onsubmit="changePassword(); return false" class="reset-container">
+        <div class="reset-headline">
+          <a href="../../index.html"><img src="../../assets/img/leaveBlue.svg" /></a>
+          <h1>Reset your password</h1>
+        </div>
+
+        <div class="content">
+          <div class="content-headline">
+            <p>Change your account password</p>
+          </div>
+
+          <div class="change-password">
+            <input id="newPassword" placeholder="New Password" type="text" required />
+            <input id="confirmPassword" placeholder="Confirm Password" type="text" required />
+            <p class="d-none" id="error">
+              Please enter two matching passwords
+            </p>
+          </div>
+
+          <div class="continue" id="continue">
+            <button type="submit">Continue</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

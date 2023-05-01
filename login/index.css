@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+#signUpButton {
+    display: flex;
+    position: absolute;
+    top: 67px;
+    right: 114px;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInText {
+    font-size: 21px;
+    line-height: 120%;
+}
+
+.signInButton {
+    width: 91px;
+    height: 51px;
+    background: #2A3647;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+    line-height: 120%;
+    cursor: pointer;
+}
+
+.signInButton:hover {
+    background: #29ABE2;
+    border: 3px solid #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.loginPage {
+    width: 100%;
+    height: 100%;
+}
+
+.loginArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#loginBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 23px 0px;
+    position: absolute;
+    top: 25vh;
+    width: 652px;
+    height: 513px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+    border-radius: 30px;
+}
+
+.loginHeadlineText {
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+}
+
+.loginHeadlineSeperator {
+    width: 150px;
+    border: 3px solid #29ABE2;
+    margin-top: 24px;
+    margin-bottom: 35px;
+}
+
+.inputFieldContainer {
+    margin-top: 29px;
+    display: flex;
+}
+
+.inputFieldImageContainer {
+    width: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.inputFieldImage {
+    margin-bottom: 8px;
+    margin-left: -40px;
+    margin-right: 18px;
+    object-fit: none;
+}
+
+.loginInputField {
+    box-sizing: border-box;
+    padding: 13px 21px;
+    width: 422px;
+    height: 51px;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 21px;
+    line-height: 120%;
+}
+
+.error {
+    font-family: 'Poppins';
+    font-size: 12px;
+    line-height: 120%;
+    color: red;
+}
+
+
+.loginRememberMeForgotPassword {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 35px;
+}
+
+#loginRememberCheckbox {
+    cursor: pointer;
+}
+
+.forgotPassword {
+    color: rgb(40, 171, 226);
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.loginButton {
+    padding: 4px 0px;
+    width: 145px;
+    height: 51px;
+    background: #2A3647;
+    border-radius: 8px;
+    border: 0px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.loginButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    padding-top: 35px;
+    justify-content: center;
+}
+
+.loginGuestButton {
+    padding: 4px 16px;
+    width: 161px;
+    height: 51px;
+    border: 1px solid #2A3647;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #2A3647;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+    cursor: pointer;
+}
+
+.loginGuestButton:hover {
+    border: 2px solid #29ABE2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #29ABE2;
+}
+
+.logo {
+    position: absolute;
+    top: 80px;
+    left: 77px;
+    width: 100px;
+    height: auto;
+}
+
+.pointerEventsNone {
+    pointer-events: none;
+}
+
+.dp-none {
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+
+    40% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.moveLogo {
+    animation: moveLogo 1s ease-in-out;
+    z-index: 10;
+}
+
+@keyframes moveLogo {
+    0% {
+        top: 50vh;
+        left: 50vw;
+        width: 274px;
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        top: 80px;
+        left: 77px;
+        width: 100.03px;
+    }
+}
