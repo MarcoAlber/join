@@ -6,28 +6,23 @@ let inProgressTasksCount = 0;
 let awaitingFeedbackTasksCount = 0;
 let user;
 
-
 async function initSummary() {
     await init();
     tasks = await JSON.parse(await backend.getItem('tasks')) || [];
     setContent();
 }
 
-
 function hoverSrcChange(id, src) {
     document.getElementById(id).setAttribute("src", src);
 }
-
 
 function hoverColorChange(id, color) {
     document.getElementById(id).style.color = color;
 }
 
-
 function linkToBoard() {
     window.location.href = "../board/board.html";
 }
-
 
 function setContent() {
     setWelcomeText();
@@ -36,7 +31,6 @@ function setContent() {
     setTaskCounts();
     getNextDate();
 }
-
 
 function countTasks() {
     for (let i = 0; i < tasks.length; i++) {
@@ -58,7 +52,6 @@ function countTasks() {
     }
 }
 
-
 function setTaskCounts() {
     document.getElementById('totalTaskCount').innerHTML = tasks.length;
     document.getElementById('urgentTaskCount').innerHTML = urgentTasksCount;
@@ -67,7 +60,6 @@ function setTaskCounts() {
     document.getElementById('inProgressTaskCount').innerHTML = inProgressTasksCount;
     document.getElementById('awaitingFeedbackTaskCount').innerHTML = awaitingFeedbackTasksCount;
 }
-
 
 function getNextDate() {
     let dates = [];
@@ -83,7 +75,6 @@ function getNextDate() {
     setNextDeadline(dates)
 }
 
-
 function setNextDeadline(dates) {
     if (dates.length > 0) {
         dates.sort();
@@ -95,12 +86,10 @@ function setNextDeadline(dates) {
     }
 }
 
-
 function formatDate(date) {
     const dateAsString = new Date(date + 'T00:00:00.000');
     return dateAsString.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
-
 
 function getWelcomeText() {
     let date = new Date();
@@ -121,7 +110,6 @@ function getWelcomeText() {
     return greeting;
 }
 
-
 function setWelcomeText() {
     let greeting = getWelcomeText();
     if (localStorage.getItem("guestLogin") == 0) {
@@ -130,16 +118,13 @@ function setWelcomeText() {
     }
     document.getElementById('textGreeting').innerHTML = greeting;
     document.getElementById('welcomeGreeting').innerHTML = greeting;
-
 }
-
 
 function setWelcomeUser() {
     user = JSON.parse(localStorage.getItem("user")) || [];
     document.getElementById('textUserName').innerHTML = `${user.firstName} ${user.surname}`;
     document.getElementById('welcomeUserName').innerHTML = `${user.firstName} ${user.surname}`;
 }
-
 
 function setWelcomeScreen() {
     if (checkWelcomeScreenShouldDisplayed()) {
@@ -150,7 +135,6 @@ function setWelcomeScreen() {
     }
 }
 
-
 function displayWelcomeScreen() {
     let welcomeScreenClassList = document.getElementById('welcomeScreen').classList;
     welcomeScreenClassList.remove('invisible');
@@ -158,7 +142,6 @@ function displayWelcomeScreen() {
     welcomeScreenClassList.add('fadeOut');
     setTimeout(function () { welcomeScreenClassList.add('invisible') }, 2500);
 }
-
 
 function checkWelcomeScreenShouldDisplayed() {
     if (document.referrer.slice(-5) == 'join/' || document.referrer.slice(-10) == 'index.html') {

@@ -1,20 +1,25 @@
 function taskCardHtml() {
   return /*html*/ `
-      <div draggable="true" ondragstart="startDragging(${currentTask['id']})" class="task-card" id="${currentTask['id']}" onclick="openCard('${currentTask['id']}')">
+      <div draggable="true" ondragstart="startDragging(${currentTask['id']})" class="task-card" 
+      id="${currentTask['id']}" onclick="openCard('${currentTask['id']}')">
       <div id="task-card-move-menu-${currentTask['id']}" class='task-card-move-menu d-none'>
             <div class="task-card-move-menu-headline">
                 <span>Move Task</span>
             </div>
-            <div class="task-card-move-menu-item" id="todo-move-menu-item-${currentTask['id']}" onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'to do')">
+            <div class="task-card-move-menu-item" id="todo-move-menu-item-${currentTask['id']}" 
+            onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'to do')">
                 <span>To do</span>
             </div>
-            <div class="task-card-move-menu-item" id="inprogress-move-menu-item-${currentTask['id']}" onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'in progress')">
+            <div class="task-card-move-menu-item" id="inprogress-move-menu-item-${currentTask['id']}" 
+            onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'in progress')">
                 <span>In progress</span>
             </div>
-            <div class="task-card-move-menu-item" id="awaitingfeedback-move-menu-item-${currentTask['id']}" onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'awaiting feedback')">
+            <div class="task-card-move-menu-item" id="awaitingfeedback-move-menu-item-${currentTask['id']}" 
+            onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'awaiting feedback')">
                 <span>Awaiting Feedback</span>
             </div>
-            <div class="task-card-move-menu-item" id="done-move-menu-item-${currentTask['id']}" onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'done')">
+            <div class="task-card-move-menu-item" id="done-move-menu-item-${currentTask['id']}" 
+            onclick="event.stopPropagation(); moveTaskToStatus('${currentTask['id']}', 'done')">
                 <span>Done</span>
             </div>
         </div>
@@ -23,7 +28,8 @@ function taskCardHtml() {
                 <span>${currentTask["category"]}</span>
             </div>
             <div>
-                <img id="task-card-move-menu-icon-${currentTask['id']}" class="task-card-move-menu-icon" src="../assets/img/arrow-59-32.png" onclick="event.stopPropagation(); toggleMoveMenu(${currentTask['id']})">
+                <img id="task-card-move-menu-icon-${currentTask['id']}" class="task-card-move-menu-icon" 
+                src="../assets/img/arrow-59-32.png" onclick="event.stopPropagation(); toggleMoveMenu(${currentTask['id']})">
             </div>
         </div>
           <div>
@@ -67,7 +73,8 @@ function openCardHtml() {
                 <p><b>Due Date:</b> ${currentTask["date"]}</p>
             </div>
             <div class="text align-center">
-                <p><b>Priority:</b></p> <p class="${currentTask["prio"]} open-task-card-prio">${currentTask["prio"]} <img src="../addtask/assets/img/${currentTask["prio"]}-white.svg"></p>
+                <p><b>Priority:</b></p> <p class="${currentTask["prio"]} open-task-card-prio">${currentTask["prio"]} 
+                <img src="../addtask/assets/img/${currentTask["prio"]}-white.svg"></p>
             </div>
             <div id="subtask">
                 <p class="text"><b>Subtask:</b></p>

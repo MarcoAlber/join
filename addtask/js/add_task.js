@@ -47,43 +47,51 @@ function checkPrio(newprio) {
 
 function getPrio(prio) {
   document.getElementById(prio).classList.add(prio);
-  document.getElementById(
-    `${prio}-img`
-  ).src = `../addtask/assets/img/${prio}-white.svg`;
+  document.getElementById(`${prio}-img`).src = `../addtask/assets/img/${prio}-white.svg`;
   prios = [prio];
 }
 
 function takePrio(prio) {
   document.getElementById(prio).classList.remove(prio);
-  document.getElementById(
-    `${prio}-img`
-  ).src = `../addtask/assets/img/prio-${prio}.svg`;
+  document.getElementById(`${prio}-img`).src = `../addtask/assets/img/prio-${prio}.svg`;
 }
 
 function mustFields() {
   if (!category && !currentPrio) {
-    document.getElementById("categoryInput").classList.add("error");
-    document.getElementById("prios").classList.add("error");
-    setTimeout(() => {
-      document.getElementById("prios").classList.remove("error");
-      document.getElementById("categoryInput").classList.remove("error");
-    }, 1500);
+    mustFieldsWithoutBoth();
   }
   else if (!category && currentPrio) {
-    document.getElementById("categoryInput").classList.add("error");
-    setTimeout(() => {
-      document.getElementById("categoryInput").classList.remove("error");
-    }, 1500);
+    mustFieldsOnlyPrio();
   }
   else if (!currentPrio && category) {
-    document.getElementById("prios").classList.add("error");
-    setTimeout(() => {
-      document.getElementById("prios").classList.remove("error");
-    }, 1500);
+    mustFieldsOnlyCategory();
   }
   else {
     getValuesFromInputs();
   }
+}
+
+function mustFieldsWithoutBoth() {
+  document.getElementById("categoryInput").classList.add("error");
+  document.getElementById("prios").classList.add("error");
+  setTimeout(() => {
+    document.getElementById("prios").classList.remove("error");
+    document.getElementById("categoryInput").classList.remove("error");
+  }, 1500);
+}
+
+function mustFieldsOnlyPrio() {
+  document.getElementById("categoryInput").classList.add("error");
+  setTimeout(() => {
+    document.getElementById("categoryInput").classList.remove("error");
+  }, 1500);
+}
+
+function mustFieldsOnlyCategory() {
+  document.getElementById("prios").classList.add("error");
+  setTimeout(() => {
+    document.getElementById("prios").classList.remove("error");
+  }, 1500);
 }
 
 function getValuesFromInputs() {
@@ -107,6 +115,10 @@ function createTask(title, description, date) {
     subTaskFinish: 0,
     id: currentId,
   });
+  addTaskAndLinkToBoard(title, description, date);
+}
+
+function addTaskAndLinkToBoard(title, description, date) {
   addTasks();
   linkToBoard();
   title.value = "";
@@ -146,23 +158,17 @@ function createNewSubtask() {
 
 function openCategoryList() {
   closeAssignList();
-  document.getElementById("categoryListContainer").innerHTML =
-    openCategoryListHtml();
-  document
-    .getElementById("closedCategoryInput")
-    .classList.add("border-drop-down");
+  document.getElementById("categoryListContainer").innerHTML = openCategoryListHtml();
+  document.getElementById("closedCategoryInput").classList.add("border-drop-down");
   document.getElementById("categoryList").classList.remove("d-none");
   document.getElementById("categoryList").style = `border-top: none`;
 }
 
 function openAssignToList() {
   closeCategoryList();
-  document.getElementById("assignToContainer").innerHTML =
-    openAssignToListHtml();
+  document.getElementById("assignToContainer").innerHTML = openAssignToListHtml();
   document.getElementById("AssignToList").classList.remove("d-none");
-  document
-    .getElementById("closedAssingToInput")
-    .classList.add("border-drop-down");
+  document.getElementById("closedAssingToInput").classList.add("border-drop-down");
   renderAddTaskContacts();
 }
 
@@ -192,9 +198,7 @@ function getCategory(name, newcolor) {
   category = name;
   color = newcolor;
   closeCategoryList();
-  document.getElementById(
-    "colorContainer"
-  ).innerHTML += `<div class="${color} color-container"></div>`;
+  document.getElementById("colorContainer").innerHTML += `<div class="${color} color-container"></div>`;
   document.getElementById("category").value = `${name} `;
 }
 
@@ -219,10 +223,7 @@ function clearAll() {
 
 function renderNoAssignToContacts(contact) {
   for (let j = 0; j < assignTo.length; j++) {
-    if (
-      document.getElementById(`${contact["mail"]}-add`).innerText ==
-      `${assignTo[j]["firstName"]} ${assignTo[j]["surname"]}`
-    ) {
+    if (document.getElementById(`${contact["mail"]}-add`).innerText == `${assignTo[j]["firstName"]} ${assignTo[j]["surname"]}`) {
       document.getElementById(`${contact["mail"]}-add`).classList.add("d-none");
     }
   }
@@ -233,14 +234,8 @@ let user = JSON.parse(localStorage.getItem("user")) || [];
 function renderAllContacts() {
   for (let i = 0; i < contacts.length; i++) {
     let contact = contacts[i];
-    document.getElementById("AssignToList").innerHTML += renderContactsHtml(
-      contact,
-      i
-    );
-    if (
-      document.getElementById(`${contact["mail"]}-add`).innerText ==
-      `${user["firstName"]} ${user["surname"]}`
-    ) {
+    document.getElementById("AssignToList").innerHTML += renderContactsHtml(contact, i);
+    if (document.getElementById(`${contact["mail"]}-add`).innerText == `${user["firstName"]} ${user["surname"]}`) {
       document.getElementById(`${contact["mail"]}-add`).classList.add("d-none");
     }
     renderNoAssignToContacts(contact);
@@ -250,10 +245,9 @@ function renderAllContacts() {
 function renderAddTaskContacts() {
   if (user["firstName"] === "Ghost" && user["surname"] === "Guest") {
     renderAllContacts();
-  } else if (
-    !assignTo.some((item) => item.firstName === `${user["firstName"]}`) &&
-    !assignTo.some((item) => item.surname === `${user["surname"]}`)
-  ) {
+  }
+  else if (!assignTo.some((item) => item.firstName === `${user["firstName"]}`) &&
+    !assignTo.some((item) => item.surname === `${user["surname"]}`)) {
     document.getElementById("AssignToList").innerHTML = assignToYouTemplate();
     renderAllContacts();
   } else {
@@ -262,17 +256,13 @@ function renderAddTaskContacts() {
 }
 
 function assignContactTo(firstName, surname, i) {
-  if (
-    document.getElementById(`${contacts[i]["mail"]}-input`).checked == false
-  ) {
+  if (document.getElementById(`${contacts[i]["mail"]}-input`).checked == false) {
     document.getElementById(`${contacts[i]["mail"]}-input`).click();
     assignTo.push({
       firstName: firstName,
       surname: surname,
     });
-  } else if (
-    document.getElementById(`${contacts[i]["mail"]}-input`).checked == true
-  ) {
+  } else if (document.getElementById(`${contacts[i]["mail"]}-input`).checked == true) {
     for (let j = 0; j < assignTo.length; j++) {
       if (assignTo[j]["firstName"] == firstName) {
         document.getElementById(`${contacts[i]["mail"]}-input`).click();
@@ -325,39 +315,20 @@ async function addTasks() {
 
 async function mustFieldsTemplate() {
   if (!category && !currentPrio) {
-    document.getElementById("categoryInput").classList.add("error");
-    document.getElementById("prios").classList.add("error");
-    setTimeout(() => {
-      document.getElementById("prios").classList.remove("error");
-      document.getElementById("categoryInput").classList.remove("error");
-    }, 1500);
+    mustFieldsWithoutBoth();
   }
   else if (!category && currentPrio) {
-    document.getElementById("categoryInput").classList.add("error");
-    setTimeout(() => {
-      document.getElementById("categoryInput").classList.remove("error");
-    }, 1500);
+    mustFieldsOnlyPrio();
   }
   else if (!currentPrio && category) {
-    document.getElementById("prios").classList.add("error");
-    setTimeout(() => {
-      document.getElementById("prios").classList.remove("error");
-    }, 1500);
+    mustFieldsOnlyCategory();
   }
   else {
     getValuesFromInputsTemplate();
   }
 }
 
-function getValuesFromInputsTemplate() {
-  let templateTitle = document.getElementById("inputTitleTemplate");
-  let templateDescription = document.getElementById("inputDescriptionTemplate");
-  let templateDate = document.getElementById("inputDateTemplate");
-  createTaskTemplate(templateTitle, templateDescription, templateDate);
-}
-
-async function createTaskTemplate(title, description, date) {
-  getTasksId();
+function pushTaskOfTemplate(title, description, date) {
   tasks.push({
     title: title.value,
     description: description.value,
@@ -371,6 +342,18 @@ async function createTaskTemplate(title, description, date) {
     subTaskFinish: 0,
     id: currentId,
   });
+}
+
+function getValuesFromInputsTemplate() {
+  let templateTitle = document.getElementById("inputTitleTemplate");
+  let templateDescription = document.getElementById("inputDescriptionTemplate");
+  let templateDate = document.getElementById("inputDateTemplate");
+  createTaskTemplate(templateTitle, templateDescription, templateDate);
+}
+
+async function createTaskTemplate(title, description, date) {
+  getTasksId();
+  pushTaskOfTemplate(title, description, date);
   if (window.location.pathname == '/board/board.html') {
     addTasks();
     await updateHtml();
@@ -380,10 +363,6 @@ async function createTaskTemplate(title, description, date) {
     closeAddTaskContainer();
   }
   else {
-    addTasks();
-    linkToBoard();
-    title.value = "";
-    description.value = "";
-    date.value = "";
+    addTaskAndLinkToBoard(title, description, date);
   }
 }

@@ -25,7 +25,6 @@ async function changePassword() {
     document.getElementById("error").classList.remove("d-none");
     document.getElementById("continue").style = "margin-top: 0px";
   }
-  console.log(forgotUser);
 }
 
 async function load() {

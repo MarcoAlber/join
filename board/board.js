@@ -43,9 +43,7 @@ function checkAssignTo() {
       for (let j = 0; j < currentTask["contact"].length; j++) {
         getCharAtNull(j);
         getContactColor(j);
-        document.getElementById(
-          `contactContainer${currentTask["id"]}`
-        ).innerHTML += assignToHtml();
+        document.getElementById(`contactContainer${currentTask["id"]}`).innerHTML += assignToHtml();
       }
     } else {
       assignToBigger3();
@@ -60,10 +58,8 @@ function assignToBigger3() {
     document.getElementById(`contactContainer${currentTask["id"]}`).innerHTML +=
       assignToBigger3Html(j);
   }
-  document.getElementById(
-    `contactContainer${currentTask["id"]}`
-  ).innerHTML += `<p class="contact" style="background-color: #2A3647">+${currentTask["contact"].length - 2
-  }</p>`;
+  document.getElementById(`contactContainer${currentTask["id"]}`).innerHTML +=
+    `<p class="contact" style="background-color: #2A3647">+${currentTask["contact"].length - 2}</p>`;
 }
 
 function getContactColor(j) {
@@ -113,21 +109,12 @@ function getSubtaskForOpenedCard(id) {
 
 function getSubtaskChecked(currentTaskId, j) {
   if (subTasksFinish.length == 0) {
-    document.getElementById(currentTaskId).innerHTML = subtaskAddHtml(
-      currentTaskId,
-      j
-    );
+    document.getElementById(currentTaskId).innerHTML = subtaskAddHtml(currentTaskId, j);
   }
   if (subTasksFinish.includes(`${currentTaskId}`)) {
-    document.getElementById(currentTaskId).innerHTML = subtaskFinishHtml(
-      currentTaskId,
-      j
-    );
+    document.getElementById(currentTaskId).innerHTML = subtaskFinishHtml(currentTaskId, j);
   } else {
-    document.getElementById(currentTaskId).innerHTML = subtaskAddHtml(
-      currentTaskId,
-      j
-    );
+    document.getElementById(currentTaskId).innerHTML = subtaskAddHtml(currentTaskId, j);
   }
 }
 
@@ -161,27 +148,13 @@ async function addSubtaskToDelete(id, j) {
 }
 
 function toggleMoveMenu(id) {
-  if (
-    document
-      .getElementById(`task-card-move-menu-${id}`)
-      .classList.contains("d-none")
-  ) {
-    document
-      .getElementById(`task-card-move-menu-${id}`)
-      .classList.remove("d-none");
-    document
-      .getElementById(`task-card-move-menu-icon-${id}`)
-      .setAttribute("src", "../assets/img/close-window-32.png");
+  if (document.getElementById(`task-card-move-menu-${id}`).classList.contains("d-none")) {
+    document.getElementById(`task-card-move-menu-${id}`).classList.remove("d-none");
+    document.getElementById(`task-card-move-menu-icon-${id}`).setAttribute("src", "../assets/img/close-window-32.png");
     let status = tasks.find((t) => t.id == id)["status"].replace(/\s/g, "");
-    document
-      .getElementById(`${status}-move-menu-item-${id}`)
-      .classList.add("d-none");
+    document.getElementById(`${status}-move-menu-item-${id}`).classList.add("d-none");
   } else {
-    document
-      .getElementById(`task-card-move-menu-${id}`)
-      .classList.add("d-none");
-    document
-      .getElementById(`task-card-move-menu-icon-${id}`)
-      .setAttribute("src", "../assets/img/arrow-59-32.png");
+    document.getElementById(`task-card-move-menu-${id}`).classList.add("d-none");
+    document.getElementById(`task-card-move-menu-icon-${id}`).setAttribute("src", "../assets/img/arrow-59-32.png");
   }
 }

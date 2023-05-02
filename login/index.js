@@ -6,7 +6,6 @@ async function initLogin() {
     loadRememberedUser();
 }
 
-
 function loadRememberedUser() {
     if ((localStorage.getItem("rememberUser") || 0) == 1) {
         rememberedUser = JSON.parse(localStorage.getItem("rememberedUser")) || []
@@ -18,13 +17,11 @@ function loadRememberedUser() {
     }
 }
 
-
 function emailInputChanged() {
     if (!document.getElementById('loginEmail').classList.contains('hidden')) {
         document.getElementById('wrongEmail').classList.add("hidden");
     }
 }
-
 
 function pwInputChanged() {
     if (!document.getElementById('loginPassword').classList.contains('hidden')) {
@@ -32,7 +29,6 @@ function pwInputChanged() {
     }
     togglePasswordImage();
 }
-
 
 function togglePasswordImage() {
     if (document.getElementById('loginPassword').value == '') {
@@ -48,7 +44,6 @@ function togglePasswordImage() {
     }
 }
 
-
 function togglePasswordVisibility() {
     if (document.getElementById('loginPassword').getAttribute('type') == 'password') {
         document.getElementById('loginPassword').setAttribute('type', 'text');
@@ -58,7 +53,6 @@ function togglePasswordVisibility() {
         document.getElementById('loginPasswordImage').setAttribute('src', './assets/img/hidePassword.png');
     }
 }
-
 
 function noUserPassword() {
     user = {
@@ -70,7 +64,6 @@ function noUserPassword() {
         surname: user.surname
     };
 }
-
 
 async function login() {
     user = await contacts.find((contact) => contact.mail == document.getElementById('loginEmail').value)
@@ -91,7 +84,6 @@ async function login() {
     }
 }
 
-
 function setRememberUser() {
     if (document.getElementById("loginRememberCheckbox").checked) {
         localStorage.setItem("rememberedUser", JSON.stringify(user));
@@ -101,7 +93,6 @@ function setRememberUser() {
     }
 }
 
-
 function openSignUp() {
     document.getElementById('emailIsAlreadyExistingSignUp').classList.add('dp-none');
     document.getElementById('signUpContainerContent').classList.remove("dp-none");
@@ -109,7 +100,6 @@ function openSignUp() {
     document.getElementById('signUpButton').classList.add("dp-none");
     document.getElementById("signUpFirstNameInput").focus();
 }
-
 
 function openForgotPassword() {
     document.getElementById('eMailHasBeenSent').classList.add('dp-none');
@@ -119,12 +109,10 @@ function openForgotPassword() {
     document.getElementById("forgotMailInput").focus();
 }
 
-
 function setUser(user) {
     let userAsText = JSON.stringify(user);
     localStorage.setItem("user", userAsText);
 }
-
 
 function guestLogin() {
     setUser(guestUser);
