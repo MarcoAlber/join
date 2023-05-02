@@ -121,7 +121,6 @@ body {
 .squareButtonMobile:hover {
     background-color: #2A3647;
     color: white;
-    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -143,7 +142,6 @@ body {
 .urgencySummaryMobile:hover {
     background-color: #2A3647;
     color: white;
-    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -199,7 +197,6 @@ body {
 .rectangleButton:hover {
     background-color: #2A3647;
     color: white !important;
-    transform: scale(1.05);
     cursor: pointer;
 }
 
