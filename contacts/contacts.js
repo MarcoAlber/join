@@ -191,6 +191,7 @@ function closeEditSaveDeleteContactContainer() {
 
 function openAddTaskContainer(status) {
     currentStatusTemp = status;
+    subTask = [];
     document.getElementById("newSubtask").innerHTML = '';
     ifPrioSet();
     document.getElementById('taskBoard').classList.remove('d-none');
@@ -211,6 +212,7 @@ function ifPrioSet() {
         document.getElementById('low').classList.remove("low");
         document.getElementById('low-img').src = `../addtask/assets/img/prio-low.svg`;
     }
+    prios = [];
 }
 
 function closeAddTaskContainer() {

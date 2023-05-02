@@ -50,6 +50,7 @@ function getPrio(prio) {
   document.getElementById(
     `${prio}-img`
   ).src = `../addtask/assets/img/${prio}-white.svg`;
+  prios = [prio];
 }
 
 function takePrio(prio) {
