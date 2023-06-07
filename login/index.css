@@ -40,14 +40,14 @@ body {
 
 .loginPage {
     width: 100%;
-    height: 100%;
+    height: 100dvh;
 }
 
 .loginArea {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100dvh;
 }
 
 #loginBox {
@@ -56,7 +56,7 @@ body {
     align-items: center;
     padding: 23px 0px;
     position: absolute;
-    top: 25vh;
+    top: 25dvh;
     width: 652px;
     height: 513px;
     background: #FFFFFF;
@@ -233,7 +233,7 @@ body {
 
 @keyframes moveLogo {
     0% {
-        top: 50vh;
+        top: 50dvh;
         left: 50vw;
         width: 274px;
         transform: translate(-50%, -50%);

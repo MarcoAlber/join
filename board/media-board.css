@@ -33,7 +33,7 @@
     padding-top: 123px;
     top: unset;
     width: 100%;
-    height: calc(100% - 204px);
+    height: calc(100dvh - 204px);
   }
 
   .joinDescription {

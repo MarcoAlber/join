@@ -96,7 +96,7 @@
     .contactsAdressContainer {
         margin-top: 75px;
         width: 100%;
-        height: calc(100vh - 164px);
+        height: calc(100dvh - 164px);
         box-shadow: none;
     }
 
@@ -143,6 +143,7 @@
         width: 100%;
         left: 0;
         top: 0;
+        height: calc(100dvh - 159.02px);
     }
 
     .contactsBetterWithATeam {
@@ -155,8 +156,13 @@
     }
 
     .contactsRightContainer {
+        position: absolute;
         justify-content: center;
-        padding-left: 20px;
+        height: auto;
+    }
+
+    .emailPlusPhoneContainer {
+        padding-bottom: 20px;
     }
 
     .contactsHeadlineContainer {
@@ -190,7 +196,7 @@
     }
 
     .contactsAdressContainer {
-        height: calc(100vh - 234.02px);
+        height: calc(100dvh - 234.02px);
     }
 
     .contactsNewContact {

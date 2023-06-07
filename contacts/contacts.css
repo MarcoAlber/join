@@ -88,7 +88,7 @@ body {
 .contactsAdressContainer {
     z-index: 1;
     width: 453px;
-    height: calc(100vh - 89px);
+    height: calc(100dvh - 89px);
     overflow-y: auto;
     background: #FFFFFF;
     box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
@@ -194,7 +194,7 @@ body {
 .contactsRightContainer {
     background: #F5F5F5;
     width: calc(100% - 453px);
-    height: calc(100vh - 89px);
+    height: calc(100dvh - 89px);
 }
 
 .kanbanResponsive {

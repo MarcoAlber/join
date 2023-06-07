@@ -6,7 +6,7 @@ body {
     overflow-y: auto;
     position: relative;
     top: 89px;
-    height: calc(100vh - 89px);
+    height: calc(100dvh - 89px);
 }
 
 .aroundLegalContainer::-webkit-scrollbar {
@@ -73,7 +73,7 @@ body {
         overflow-y: auto;
         position: relative;
         top: 79.02px;
-        height: calc(100vh - 159.02px);
+        height: calc(100dvh - 159.02px);
     }
 
     .help-side {
