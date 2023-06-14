@@ -1,9 +1,13 @@
 let forgotUser;
 let resetContact;
 
+/** loads contacts of database */
 load();
+
+/** loads forgot user of local storage */
 loadFromLocalStorage();
 
+/** loads forgot user of local storage */
 function loadFromLocalStorage() {
   let user = localStorage.getItem("forgotUser");
 
@@ -12,6 +16,7 @@ function loadFromLocalStorage() {
   }
 }
 
+/** changes password of forgot user */
 async function changePassword() {
   resetContact = await contacts.find((c) => c.mail == forgotUser["mail"]);
   let newPassword = document.getElementById("newPassword");
@@ -27,6 +32,7 @@ async function changePassword() {
   }
 }
 
+/** loads contacts of database */
 async function load() {
   let contactsASText = await backend.getItem("contactsASText");
 
@@ -35,6 +41,7 @@ async function load() {
   }
 }
 
+/** saves contacts into database */
 async function save() {
   let contactsASText = JSON.stringify(contacts);
   await backend.setItem('contactsASText', contactsASText);

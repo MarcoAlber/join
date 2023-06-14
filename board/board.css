@@ -121,7 +121,7 @@ body {
 }
 
 .status-child {
-  height: calc(100dvh - 52px);
+  height: calc(100% - 52px);
   overflow-y: auto;
   overflow-x: hidden;
 }

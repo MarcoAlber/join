@@ -88,8 +88,8 @@ function openCardHtml() {
                 </div>
             </div>
             <div class="buttonsTaskCard">
-                <img onclick="editCardHtml(${currentTask['id']})" class="editBtn" src="../assets/img/editResponsive.png">
-                <img src="../assets/img/trash.png" alt="" onclick="deleteTask(${currentTask['id']})" class="editBtnTrash">
+                <img onclick="editCardHtml(${currentTask['id']})" title="Edit task" class="editBtn" src="../assets/img/editResponsive.png">
+                <img src="../assets/img/trash.png" title="Delete contact" onclick="deleteTask(${currentTask['id']})" class="editBtnTrash">
             </div>
         </div>
     </div>

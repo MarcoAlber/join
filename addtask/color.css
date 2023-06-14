@@ -11,6 +11,7 @@
   border-radius: 50%;
   height: 12.5px;
   width: 12.5px;
+  cursor: pointer;
 }
 
 .blue {

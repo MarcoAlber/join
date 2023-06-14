@@ -1,11 +1,13 @@
 let user;
 let rememberedUser;
 
+/** loads the website on start */
 async function initLogin() {
     await initIndex();
     loadRememberedUser();
 }
 
+/** loads user if user is remembered */
 function loadRememberedUser() {
     if ((localStorage.getItem("rememberUser") || 0) == 1) {
         rememberedUser = JSON.parse(localStorage.getItem("rememberedUser")) || []
@@ -17,12 +19,14 @@ function loadRememberedUser() {
     }
 }
 
+/** hides wrong email container after typing new email */
 function emailInputChanged() {
     if (!document.getElementById('loginEmail').classList.contains('hidden')) {
         document.getElementById('wrongEmail').classList.add("hidden");
     }
 }
 
+/** hides wrong password container after typing new password */
 function pwInputChanged() {
     if (!document.getElementById('loginPassword').classList.contains('hidden')) {
         document.getElementById('wrongPassword').classList.add("hidden");
@@ -30,6 +34,7 @@ function pwInputChanged() {
     togglePasswordImage();
 }
 
+/** changes password image if input field is filled */
 function togglePasswordImage() {
     if (document.getElementById('loginPassword').value == '') {
         document.getElementById('loginPasswordImage').setAttribute('src', './assets/img/lock.png');
@@ -44,6 +49,7 @@ function togglePasswordImage() {
     }
 }
 
+/** changes password visibility after clicking on image */
 function togglePasswordVisibility() {
     if (document.getElementById('loginPassword').getAttribute('type') == 'password') {
         document.getElementById('loginPassword').setAttribute('type', 'text');
@@ -54,6 +60,7 @@ function togglePasswordVisibility() {
     }
 }
 
+/** removes password of user */
 function noUserPassword() {
     user = {
         background: user.background,
@@ -65,6 +72,7 @@ function noUserPassword() {
     };
 }
 
+/** login if user exists */
 async function login() {
     user = await contacts.find((contact) => contact.mail == document.getElementById('loginEmail').value)
     if (user) {
@@ -84,6 +92,7 @@ async function login() {
     }
 }
 
+/** set remember user into local storage */
 function setRememberUser() {
     if (document.getElementById("loginRememberCheckbox").checked) {
         localStorage.setItem("rememberedUser", JSON.stringify(user));
@@ -93,6 +102,7 @@ function setRememberUser() {
     }
 }
 
+/** opens sign up template */
 function openSignUp() {
     document.getElementById('emailIsAlreadyExistingSignUp').classList.add('dp-none');
     document.getElementById('signUpContainerContent').classList.remove("dp-none");
@@ -101,6 +111,7 @@ function openSignUp() {
     document.getElementById("signUpFirstNameInput").focus();
 }
 
+/** opens forgot password template */
 function openForgotPassword() {
     document.getElementById('eMailHasBeenSent').classList.add('dp-none');
     document.getElementById('forgotContainerContent').classList.remove("dp-none");
@@ -109,11 +120,16 @@ function openForgotPassword() {
     document.getElementById("forgotMailInput").focus();
 }
 
+/**
+ * sets user into local storage
+ * @param {json} user = current user
+ */
 function setUser(user) {
     let userAsText = JSON.stringify(user);
     localStorage.setItem("user", userAsText);
 }
 
+/** sets guest user */
 function guestLogin() {
     setUser(guestUser);
     localStorage.setItem("guestLogin", 1);

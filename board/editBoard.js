@@ -2,28 +2,17 @@ let assignUser = [];
 let rightPrio;
 let currentIdEdit;
 
+/**
+ * open the edit card container for the task
+ * @param {id} id = id of task
+ */
 function editCardHtml(id) {
   assignUser = [];
   document.getElementById("openTaskCard").innerHTML = editCardHtmlTemplate(id);
   loadCurrentTask(id);
 }
 
-function filterTasks() {
-  let search = document.getElementById('searchTask').value.toLowerCase();
-  let content = document.getElementById('status-container');
-  let cards = content.querySelectorAll('.task-card');
-
-  for (let i = 0; i < cards.length; i++) {
-    let title = cards[i].querySelector('.task-card-title').innerHTML;
-    let description = cards[i].querySelector('.task-card-description').innerHTML;
-    if (title.toLowerCase().includes(search) || description.toLowerCase().includes(search)) {
-      cards[i].style.display = 'block';
-    } else {
-      cards[i].style.display = 'none';
-    }
-  }
-}
-
+/** displays all user images which are already assign to the task */
 async function renderImgEdit() {
   for (let k = 0; k < currentIdEdit["contact"].length; k++) {
     document.getElementById('profileImgEdit').innerHTML += `
@@ -38,11 +27,19 @@ async function renderImgEdit() {
   }
 }
 
+/**
+ * deletes assign to contact out of task
+ * @param {id} k = id of assign to contact
+ */
 function deleteAssignUser(k) {
   assignUser.splice([k], 1);
   document.getElementById(`profilePictureEdit${k}`).classList.add('dp-none');
 }
 
+/**
+ * loads current task
+ * @param {id} id = id of task
+ */
 function loadCurrentTask(id) {
   currentIdEdit = tasks.find((t) => t.id == id);
   document.getElementById('input-title-edit').value = `${currentIdEdit["title"]}`;
@@ -60,6 +57,7 @@ function loadCurrentTask(id) {
   }
 }
 
+/** displays if prio is urgent */
 function ifPrioUrgent() {
   document.getElementById('urgent-edit').classList.add('urgent');
   document.getElementById('urgent-img-edit').src = "../addtask/assets/img/urgent-white.svg";
@@ -69,6 +67,7 @@ function ifPrioUrgent() {
   document.getElementById('medium-img-edit').src = "../addtask/assets/img/prio-medium.svg";
 }
 
+/** displays if prio is medium */
 function ifPrioMedium() {
   document.getElementById('medium-edit').classList.add('medium');
   document.getElementById('medium-img-edit').src = "../addtask/assets/img/medium-white.svg";
@@ -78,6 +77,7 @@ function ifPrioMedium() {
   document.getElementById('low-img-edit').src = "../addtask/assets/img/prio-low.svg";
 }
 
+/** displays if prio is low */
 function ifPrioLow() {
   document.getElementById('low-edit').classList.add('low');
   document.getElementById('low-img-edit').src = "../addtask/assets/img/low-white.svg";
@@ -87,6 +87,10 @@ function ifPrioLow() {
   document.getElementById('medium-img-edit').src = "../addtask/assets/img/prio-medium.svg";
 }
 
+/**
+ * gets the values of all inputs of the edit card
+ * @param {id} id = id of task 
+ */
 function getValuesFromInputsEdit(id) {
   let title = document.getElementById("input-title-edit");
   let description = document.getElementById("input-description-edit");
@@ -95,6 +99,13 @@ function getValuesFromInputsEdit(id) {
   editTask(title, description, date, id);
 }
 
+/**
+ * edit task of changes in edit card
+ * @param {container} title = container of title inputfield
+ * @param {container} description = container of description inputfield
+ * @param {container} date = container of date inputfield
+ * @param {id} id = id of task 
+ */
 function editTask(title, description, date, id) {
   currentIdEdit.title = title.value;
   currentIdEdit.description = description.value;
@@ -108,6 +119,10 @@ function editTask(title, description, date, id) {
   openCard(id);
 }
 
+/**
+ * adds new priority to task
+ * @param {string} prio = string of pressed priority
+ */
 function addingPrioEdit(prio) {
   if (prios.includes(prio)) {
     checkPrioEdit(prio);
@@ -118,6 +133,7 @@ function addingPrioEdit(prio) {
   }
 }
 
+/** checks which prio was pressed */
 function addRightPrio() {
   if (document.getElementById('low-edit').classList.contains('low')) {
     rightPrio = "low";
@@ -131,6 +147,10 @@ function addRightPrio() {
   else { rightPrio = "low" }
 }
 
+/**
+ * checks which prio is already set
+ * @param {string} newprio = string of priority
+ */
 function checkPrioEdit(newprio) {
   for (let i = 0; i < prios.length; i++) {
     let prio = prios[i];
@@ -144,6 +164,10 @@ function checkPrioEdit(newprio) {
   currentPrio = newprio;
 }
 
+/**
+ * changes image of priority
+ * @param {string} prio = string of priority
+ */
 function getPrioEdit(prio) {
   document.getElementById(prio + '-edit').classList.add(prio);
   document.getElementById(`${prio}-img-edit`).src = `../addtask/assets/img/${prio}-white.svg`;
@@ -158,6 +182,7 @@ function getPrioEdit(prio) {
   }
 }
 
+/** removes rest priority when urgent priority is pressed */
 function ifPrioEditSameUrgent() {
   document.getElementById('low-edit').classList.remove('low');
   document.getElementById('low-img-edit').src = "../addtask/assets/img/prio-low.svg";
@@ -165,6 +190,7 @@ function ifPrioEditSameUrgent() {
   document.getElementById('medium-img-edit').src = "../addtask/assets/img/prio-medium.svg";
 }
 
+/** removes rest priority when medium priority is pressed */
 function ifPrioEditSameMedium() {
   document.getElementById('low-edit').classList.remove('low');
   document.getElementById('low-img-edit').src = "../addtask/assets/img/prio-low.svg";
@@ -172,6 +198,7 @@ function ifPrioEditSameMedium() {
   document.getElementById('urgent-img-edit').src = "../addtask/assets/img/prio-urgent.svg";
 }
 
+/** removes rest priority when low priority is pressed */
 function ifPrioEditSameLow() {
   document.getElementById('medium-edit').classList.remove('medium');
   document.getElementById('medium-img-edit').src = "../addtask/assets/img/prio-medium.svg";
@@ -179,11 +206,16 @@ function ifPrioEditSameLow() {
   document.getElementById('urgent-img-edit').src = "../addtask/assets/img/prio-urgent.svg";
 }
 
+/**
+ * removes priority color if it was already priority color
+ * @param {string} prio = string of priority
+ */
 function takePrioEdit(prio) {
   document.getElementById(prio + '-edit').classList.remove(prio);
   document.getElementById(`${prio}-img-edit`).src = `../addtask/assets/img/prio-${prio}.svg`;
 }
 
+/** opens assign to list container */
 function openAssignToListEdit() {
   document.getElementById("assignToContainerEdit").innerHTML =
     openAssignToListEditHtml();
@@ -192,11 +224,13 @@ function openAssignToListEdit() {
   renderAddTaskContactsEdit();
 }
 
+/** closes assign to list container */
 function closeAssignListEdit() {
   document.getElementById("assignToContainerEdit").innerHTML =
     closeAssignListEditHtml();
 }
 
+/** renders all contacts in edit card */
 function renderAddTaskContactsEdit() {
   for (let i = 0; i < contacts.length; i++) {
     let contact = contacts[i];
@@ -210,6 +244,12 @@ function renderAddTaskContactsEdit() {
   }
 }
 
+/**
+ * adds or remove contact of "assign to" list if checkbox filled or not
+ * @param {string} firstName = first name of contact
+ * @param {string} surname = surname of contact
+ * @param {json} i = contact details
+ */
 function assignContactToEdit(firstName, surname, i) {
   if (document.getElementById(`${i}-input`).checked == false) {
     ifCheckedFalse(firstName, surname, i);
@@ -220,6 +260,12 @@ function assignContactToEdit(firstName, surname, i) {
   }
 }
 
+/**
+ * adds contact to "assign to" list
+ * @param {string} firstName = first name of contact
+ * @param {string} surname = surname of contact
+ * @param {json} i = contact details
+ */
 function ifCheckedFalse(firstName, surname, i) {
   document.getElementById(`${i}-input`).click();
   assignUser.push({
@@ -229,6 +275,12 @@ function ifCheckedFalse(firstName, surname, i) {
   );
 }
 
+/**
+ * removes contact to "assign to" list
+ * @param {string} firstName = first name of contact
+ * @param {string} surname = surname of contact
+ * @param {json} i = contact details
+ */
 function ifCheckedTrue(firstName, surname, i) {
   for (let j = 0; j < assignUser.length; j++) {
     if (assignUser[j]["firstName"] == firstName && assignUser[j]["surname"] == surname) {
@@ -238,6 +290,7 @@ function ifCheckedTrue(firstName, surname, i) {
   }
 }
 
+/** renders tasks and assign user */
 function renderTasksEdit() {
   for (let i = 0; i < tasks.length; i++) {
     for (let k = 0; k < assignUser.length; k++) {

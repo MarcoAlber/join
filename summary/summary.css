@@ -171,6 +171,7 @@ body {
 }
 
 .tasksUrgentDate {
+    width: 150px;
     display: flex;
     flex-direction: column;
     text-align: center;

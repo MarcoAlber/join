@@ -1,3 +1,4 @@
+/** sets the website before the login */
 async function initIndex() {
     await includeHTMLLogin();
     setURL('https://marco-alber.developerakademie.net/join/smallest_backend_ever');
@@ -6,6 +7,7 @@ async function initIndex() {
     tasks = JSON.parse(backend.getItem('tasks')) || [];
 }
 
+/** sets the website after the login */
 async function init() {
     await includeHTML();
     setURL('https://marco-alber.developerakademie.net/join/smallest_backend_ever');
@@ -15,6 +17,7 @@ async function init() {
     subTasksFinish = await JSON.parse(backend.getItem('subTasks')) || [];
 }
 
+/** loads database from server before the login */
 async function includeHTMLLogin() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -29,6 +32,7 @@ async function includeHTMLLogin() {
     }
 }
 
+/** loads database from server after the login */
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -45,6 +49,7 @@ async function includeHTML() {
     changeFocusNav();
 }
 
+/** checks for login user profile picture settings */
 function changeProfileImage() {
     let profileImage = document.getElementById('profileImage');
     let userImg = JSON.parse(localStorage.getItem("user")) || [];
@@ -52,6 +57,7 @@ function changeProfileImage() {
     document.getElementById('profileImage').style.background = `${userImg["background"]}`;
 }
 
+/** changes background of current page */
 function changeFocusNav() {
     if (window.location.href.includes("contacts.html")) {
         document.getElementById('contactsNav').style.background = "#091931";
@@ -70,6 +76,7 @@ function changeFocusNav() {
     }
 }
 
+/** changes logout options if screen width is smaller than 900px */
 function openLogoutOption() {
     if (window.matchMedia("(max-width: 900px)").matches) {
         document.getElementById('legalButton').classList.remove('dp-none');
@@ -83,6 +90,7 @@ function openLogoutOption() {
     }
 }
 
+/** logouts user */
 function logOut() {
     localStorage.removeItem("user");
     window.location = '../index.html'

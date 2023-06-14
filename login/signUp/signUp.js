@@ -1,3 +1,4 @@
+/** sign up new user */
 async function signUp() {
     let firstName = document.getElementById('signUpFirstNameInput').value;
     let surname = document.getElementById('signUpSurnameInput').value;
@@ -13,6 +14,13 @@ async function signUp() {
     }
 }
 
+/**
+ * pushes new user into database
+ * @param {string} firstName = first name of contact
+ * @param {string} surname = surname of contact
+ * @param {string} mail = mail adress of contact
+ * @param {string} password = password of contact
+ */
 function ifSignUpCorrect(firstName, surname, mail, password) {
     contacts.push({
         "firstName": firstName.charAt(0).toUpperCase() + firstName.slice(1),
@@ -30,6 +38,7 @@ function ifSignUpCorrect(firstName, surname, mail, password) {
     goBackToLogin();
 }
 
+/** goes back to login page of sign up page */
 function goBackToLogin() {
     document.getElementById('signUpContainerContent').classList.add("dp-none");
     document.getElementById('loginBox').classList.remove("dp-none");
@@ -38,6 +47,7 @@ function goBackToLogin() {
     document.getElementById("loginEmail").focus();
 }
 
+/** goes back to login page of forgot password page */
 function goBackToLoginOfForgot() {
     document.getElementById('forgotContainerContent').classList.add("dp-none");
     document.getElementById('loginBox').classList.remove("dp-none");
@@ -46,6 +56,7 @@ function goBackToLoginOfForgot() {
     document.getElementById("loginEmail").focus();
 }
 
+/** changes password image if input field is filled */
 function togglePasswordImageSignUp() {
     if (document.getElementById('signUpPasswordInput').value == '') {
         document.getElementById('signUpPasswordImage').setAttribute('src', './assets/img/lock.png');
@@ -59,6 +70,7 @@ function togglePasswordImageSignUp() {
     }
 }
 
+/** changes password visibility after clicking on image */
 function togglePasswordVisibilitySignUp() {
     if (document.getElementById('signUpPasswordInput').getAttribute('type') == 'password') {
         document.getElementById('signUpPasswordInput').setAttribute('type', 'text');
@@ -69,6 +81,10 @@ function togglePasswordVisibilitySignUp() {
     }
 }
 
+/**
+ * sends a mail to user if user data is correct
+ * @param {event} event = submits form element
+ */
 async function forgotPassword(event) {
     let email = document.getElementById('forgotMailInput');
     let forgotUser = await contacts.find(c => c.mail == email.value);
@@ -83,11 +99,16 @@ async function forgotPassword(event) {
     }
 }
 
+/**
+ * sets forgot user in local storage
+ * @param {json} forgotUser = forgot user
+ */
 function setForgotUser(forgotUser) {
     let forgotUserAsText = JSON.stringify(forgotUser);
     localStorage.setItem("forgotUser", forgotUserAsText);
 }
 
+/** shows information that mail has been sent */
 function emailSent() {
     document.getElementById('eMailHasBeenSent').classList.remove('dp-none');
 }

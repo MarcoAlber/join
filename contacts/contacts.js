@@ -10,13 +10,16 @@ let guestUser =
     password: 'test'
 };
 
+/** loads contacts of database */
 load();
 
+/** loads the database and display the contacts */
 async function renderContacts() {
     await init();
     loadContacts();
 }
 
+/** loads the contacts */
 function loadContacts() {
     let contactsAdressContainer = document.getElementById('contactsAdressContainer');
     contactsAdressContainer.innerHTML = '';
@@ -24,6 +27,10 @@ function loadContacts() {
     checkIfLetterExist(contactsAdressContainer);
 }
 
+/**
+ * checks if first letter exists in contact list and display existing letters
+ * @param {container} contactsAdressContainer = container which project all contacts
+ */
 function checkIfLetterExist(contactsAdressContainer) {
     for (let i = 0; i < letters.length; i++) {
         const letter = letters[i];
@@ -39,6 +46,10 @@ function checkIfLetterExist(contactsAdressContainer) {
     }
 }
 
+/**
+ * shows contact details after clicking on name
+ * @param {id} j = id of contact
+ */
 async function showContactDetails(j) {
     loadContacts();
     let contactDetails = document.getElementById('contactDetails');
@@ -49,6 +60,10 @@ async function showContactDetails(j) {
     showContactDetailsIfResponsive();
 }
 
+/**
+ * opens the edit contact container of current contact
+ * @param {id} j = id of contact
+ */
 function openEditContactContainer(j) {
     document.getElementById('emailIsAlreadyExistingEditContact').classList.add('dp-none');
     document.getElementById('editContactFirstNameInput').value = `${contacts[j]["firstName"]}`;
@@ -61,6 +76,7 @@ function openEditContactContainer(j) {
     document.getElementById('bg-contacts').classList.remove('dp-none');
 }
 
+/** opens the new contact container */
 function openNewContactContainer() {
     let firstName = document.getElementById('addContactFirstNameInput');
     document.getElementById('emailIsAlreadyExistingAddContact').classList.add('dp-none');
@@ -75,6 +91,7 @@ function openNewContactContainer() {
     firstName.select();
 }
 
+/** adds new contact if mail is not already existing */
 async function addContact() {
     let firstName = document.getElementById('addContactFirstNameInput').value;
     let surname = document.getElementById('addContactSurnameInput').value;
@@ -90,6 +107,13 @@ async function addContact() {
     }
 }
 
+/**
+ * adds user data to new contact
+ * @param {string} firstName = first name of contact
+ * @param {string} surname = surname of contact
+ * @param {string} mail = mail adress of contact
+ * @param {number} phone = phone number of contact
+ */
 async function ifAddContactCorrect(firstName, surname, mail, phone) {
     contacts.push({
         "firstName": firstName.charAt(0).toUpperCase() + firstName.slice(1),
@@ -105,6 +129,10 @@ async function ifAddContactCorrect(firstName, surname, mail, phone) {
     await renderContacts();
 }
 
+/**
+ * saves the edited contact details if mail adress dont match another mail adress
+ * @param {id} j = id of contact
+ */
 async function saveEdit(j) {
     let firstName = document.getElementById('editContactFirstNameInput').value;
     let surname = document.getElementById('editContactSurnameInput').value;
@@ -122,6 +150,14 @@ async function saveEdit(j) {
     }
 }
 
+/**
+ * saves edit contact
+ * @param {string} firstName = first name of contact
+ * @param {string} surname = surname of contact
+ * @param {string} mail = mail adress of contact
+ * @param {number} phone = phone number of contact
+ * @param {id} j = id of contact
+ */
 async function ifMailDoesNotExist(firstName, surname, mail, phone, j) {
     contacts[j]["firstName"] = firstName;
     contacts[j]["surname"] = surname;
@@ -134,6 +170,10 @@ async function ifMailDoesNotExist(firstName, surname, mail, phone, j) {
     showContactDetails(j);
 }
 
+/**
+ * deletes contact of contacts
+ * @param {id} j = id of contact
+ */
 async function deleteContact(j) {
     if (contacts[j]["mail"] == user["mail"]) {
         changeUserToGuestUser();
@@ -148,6 +188,7 @@ async function deleteContact(j) {
     closeContactDetails();
 }
 
+/** if user deleted his own contact, current user changes to guest user */
 function changeUserToGuestUser() {
     user = {
         firstName: 'Ghost',
@@ -161,6 +202,10 @@ function changeUserToGuestUser() {
     localStorage.setItem("user", userAsText);
 }
 
+/**
+ * checks if task included deleted contact and deletes contact out of task
+ * @param {id} j = id of contact
+ */
 async function checkIfTaskIncludeContact(j) {
     for (let t = 0; t < tasks.length; t++) {
         let task = tasks[t];
@@ -174,21 +219,28 @@ async function checkIfTaskIncludeContact(j) {
     }
 }
 
+/** close new contact container */
 function closeNewContactContainer() {
     document.getElementById('addContactContainer').classList.add('moveContainerOutMedia');
     document.getElementById('bg-contacts').classList.add('dp-none');
 }
 
+/** close edit contact container */
 function closeEditContactContainer() {
     document.getElementById('editContactContainer').classList.add('moveEditContainerOutMedia');
     document.getElementById('bg-contacts').classList.add('dp-none');
 }
 
+/** close edit contact container afer save or delete contact */
 function closeEditSaveDeleteContactContainer() {
     document.getElementById('editContactContainer').classList.add('dp-none');
     document.getElementById('bg-contacts').classList.add('dp-none');
 }
 
+/**
+ * open add task container
+ * @param {id} status = id of contact
+ */
 function openAddTaskContainer(status) {
     currentStatusTemp = status;
     subTask = [];
@@ -199,6 +251,7 @@ function openAddTaskContainer(status) {
     document.getElementById('taskBoard').classList.remove('moveContainerOutMedia');
 }
 
+/** checks if prio is set in add task container */
 function ifPrioSet() {
     if (document.getElementById('urgent').classList.contains("urgent")) {
         document.getElementById('urgent').classList.remove("urgent");
@@ -215,6 +268,7 @@ function ifPrioSet() {
     prios = [];
 }
 
+/** close add task container */
 function closeAddTaskContainer() {
     document.getElementById('taskBoard').classList.add('moveContainerOutMedia');
     setTimeout(function () {
@@ -223,29 +277,43 @@ function closeAddTaskContainer() {
     }, 400);
 }
 
+/**
+ * changes the contact image of the contact in the detail contact page
+ * @param {id} j = id of contact 
+ */
 function changeContactImg(j) {
     let image = document.getElementById('adressDetailsImg');
     image.innerHTML = `${contacts[j]["firstName"].charAt(0).toUpperCase()}${contacts[j]["surname"].charAt(0).toUpperCase()}`;
     document.getElementById('adressDetailsImg').style.background = `${contacts[j]["background"]}`;
 }
 
+/**
+ * changes the contact image of the contact in the adress section
+ * @param {id} j = id of contact 
+ */
 function changeContactsImg(j) {
     let image = document.getElementById(`adressImg${j}`);
     image.innerHTML = `${contacts[j]["firstName"].charAt(0).toUpperCase()}${contacts[j]["surname"].charAt(0).toUpperCase()}`;
     document.getElementById(`adressImg${j}`).style.background = `${contacts[j]["background"]}`;
 }
 
+/**
+ * changes the contact image of the contact in the edit contact container
+ * @param {id} j = id of contact 
+ */
 function changeEditImg(j) {
     let image = document.getElementById('addContactProfileImg');
     image.innerHTML = `${contacts[j]["firstName"].charAt(0).toUpperCase()}${contacts[j]["surname"].charAt(0).toUpperCase()}`;
     document.getElementById('addContactProfileImg').style.background = `${contacts[j]["background"]}`;
 }
 
+/** display the contact headline */
 function renderContactHeadline() {
     let headline = document.getElementById('contactDetails');
     headline.innerHTML = headlineTemplate();
 }
 
+/** project the contact created animation */
 function contactCreatedAnimation() {
     document.getElementById('contactCreated').classList.remove('dp-none');
     setTimeout(function () {
@@ -253,6 +321,7 @@ function contactCreatedAnimation() {
     }, 2000);
 }
 
+/** project the contact deleted animation */
 function contactDeletedAnimation() {
     document.getElementById('contactDeleted').classList.remove('dp-none');
     setTimeout(function () {
@@ -260,6 +329,7 @@ function contactDeletedAnimation() {
     }, 2000);
 }
 
+/** shows contact details on fullscreen if screen width is 1000px or smaller */
 function showContactDetailsIfResponsive() {
     if (window.matchMedia("(max-width: 1000px)").matches) {
         document.getElementById('contactsAdressContainer').classList.add("dp-none");
@@ -268,6 +338,8 @@ function showContactDetailsIfResponsive() {
     }
 }
 
+
+/** close contact details if screen width is 1000px or smaller */
 function closeContactDetails() {
     if (window.matchMedia("(max-width: 1000px)").matches) {
         document.getElementById('contactsAdressContainer').classList.remove("dp-none");
@@ -276,6 +348,10 @@ function closeContactDetails() {
     }
 }
 
+/**
+ * creates and return a random background color for the contact profile picture
+ * @returns random background color
+ */
 function randomBgColor() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
@@ -284,11 +360,13 @@ function randomBgColor() {
     return bgColor;
 }
 
+/** saves contacts into database */
 async function save() {
     let contactsASText = JSON.stringify(contacts);
     await backend.setItem('contactsASText', contactsASText);
 }
 
+/** loads contacts of database */
 async function load() {
     let contactsASText = await backend.getItem('contactsASText');
 
