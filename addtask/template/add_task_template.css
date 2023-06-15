@@ -585,7 +585,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 #colorContainer {
-  margin-left: -240px;
+  margin-right: auto;
 }
 
 .error {

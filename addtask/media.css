@@ -25,11 +25,11 @@
   }
 
   .category {
-    width: 360px;
+    width: 362px;
   }
 
   .categoryList {
-    width: 370px;
+    width: 372px;
   }
 
   .subtask input {
@@ -96,7 +96,7 @@
   }
 
   #input-date {
-    width: 270px !important;
+    width: 281px !important;
   }
 
   .task-board-input-fields {
@@ -108,11 +108,11 @@
   }
 
   .category {
-    width: 280px;
+    width: 282px;
   }
 
   .categoryList {
-    width: 290px;
+    width: 292px;
   }
 
   .prio {
@@ -120,7 +120,7 @@
   }
 
   .subtask input {
-    width: 280px;
+    width: 291px;
   }
 
   .check input {
@@ -177,12 +177,16 @@
     background: #555;
   }
 
-  .category {
+  .subtask input {
     width: 300px;
   }
 
+  .category {
+    width: 302px;
+  }
+
   .categoryList {
-    width: 310px;
+    width: 312px;
   }
 
   #input-date {
@@ -338,7 +342,7 @@
   }
 
   .prio {
-    width: 74px;
+    width: 80px;
   }
 
   .prio p {
@@ -360,7 +364,7 @@
   }
 
   .urgent {
-    width: 74px;
+    width: 80px;
   }
 
   .urgent img {
@@ -368,7 +372,7 @@
   }
 
   .medium {
-    width: 74px;
+    width: 80px;
   }
 
   .medium img {
@@ -376,7 +380,7 @@
   }
 
   .low {
-    width: 74px;
+    width: 80px;
   }
 
   .low img {

@@ -11,7 +11,7 @@ main {
 }
 
 ::placeholder {
-	font-size: 13px;
+	font-size: 18px;
 	color: lightgrey;
 }
 
@@ -41,7 +41,7 @@ main {
 	width: 420px;
 	border-radius: 10px;
 	border: 1px solid lightgrey;
-	font-size: 13px;
+	font-size: 18px;
 	padding-left: 10px;
 }
 
@@ -50,7 +50,7 @@ main {
 	width: 420px;
 	border-radius: 10px;
 	border: 1px solid lightgrey;
-	font-size: 13px;
+	font-size: 18px;
 	resize: none;
 	font-family: 'Inter';
 	padding-left: 10px;
@@ -413,7 +413,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 #colorContainer {
-	margin-left: -240px;
+	margin-right: auto;
 }
 
 .error {
