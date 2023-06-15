@@ -123,7 +123,7 @@ async function ifAddContactCorrect(firstName, surname, mail, phone) {
         "phone": phone,
         "password": firstName.toLowerCase() + surname.charAt(0).toUpperCase()
     });
-    contactCreatedAnimation();
+    contactCreatedOrDeletedAnimation("Created");
     closeNewContactContainer();
     await save();
     await renderContacts();
@@ -180,7 +180,7 @@ async function deleteContact(j) {
     }
     await checkIfTaskIncludeContact(j);
     contacts.splice(j, 1);
-    contactDeletedAnimation();
+    contactCreatedOrDeletedAnimation("Deleted");
     closeEditSaveDeleteContactContainer();
     await save();
     await renderContacts();
@@ -237,12 +237,8 @@ function closeEditSaveDeleteContactContainer() {
     document.getElementById('bg-contacts').classList.add('dp-none');
 }
 
-/**
- * open add task container
- * @param {id} status = id of contact
- */
-function openAddTaskContainer(status) {
-    currentStatusTemp = status;
+/** open add task container */
+function openAddTaskContainer() {
     subTask = [];
     document.getElementById("newSubtask").innerHTML = '';
     ifPrioSet();
@@ -254,18 +250,24 @@ function openAddTaskContainer(status) {
 /** checks if prio is set in add task container */
 function ifPrioSet() {
     if (document.getElementById('urgent').classList.contains("urgent")) {
-        document.getElementById('urgent').classList.remove("urgent");
-        document.getElementById('urgent-img').src = `../addtask/assets/img/prio-urgent.svg`;
+        setPrio("urgent");
     }
     else if (document.getElementById('medium').classList.contains("medium")) {
-        document.getElementById('medium').classList.remove("medium");
-        document.getElementById('medium-img').src = `../addtask/assets/img/prio-medium.svg`;
+        setPrio("medium");
     }
     else if (document.getElementById('low').classList.contains("low")) {
-        document.getElementById('low').classList.remove("low");
-        document.getElementById('low-img').src = `../addtask/assets/img/prio-low.svg`;
+        setPrio("low");
     }
     prios = [];
+}
+
+/**
+ * sets right priority of "urgent", "medium" or "low" 
+ * @param {string} prio = string of "urgent", "medium" or "low" 
+ */
+function setPrio(prio) {
+    document.getElementById(`${prio}`).classList.remove(`${prio}`);
+    document.getElementById(`${prio}-img`).src = `../addtask/assets/img/prio-${prio}.svg`;
 }
 
 /** close add task container */
@@ -313,20 +315,19 @@ function renderContactHeadline() {
     headline.innerHTML = headlineTemplate();
 }
 
-/** project the contact created animation */
-function contactCreatedAnimation() {
-    document.getElementById('contactCreated').classList.remove('dp-none');
+/**
+ * project the contact created or deleted animation
+ * @param {string} action = string of "Created" or "Deleted"
+ */
+function contactCreatedOrDeletedAnimation(action) {
+    document.getElementById(`contact${action}`).classList.remove('dp-none');
     setTimeout(function () {
-        document.getElementById('contactCreated').classList.add('contactCreatedButton');
+        document.getElementById(`contact${action}`).classList.add('contactCreatedButton');
     }, 2000);
-}
-
-/** project the contact deleted animation */
-function contactDeletedAnimation() {
-    document.getElementById('contactDeleted').classList.remove('dp-none');
     setTimeout(function () {
-        document.getElementById('contactDeleted').classList.add('contactCreatedButton');
-    }, 2000);
+        document.getElementById(`contact${action}`).classList.add('dp-none')
+        document.getElementById(`contact${action}`).classList.remove('contactCreatedButton');
+    }, 2300);
 }
 
 /** shows contact details on fullscreen if screen width is 1000px or smaller */

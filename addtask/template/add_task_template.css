@@ -267,7 +267,11 @@ textarea::-webkit-scrollbar-thumb:hover {
   align-items: center;
   gap: 10px;
   padding-left: 10px;
+}
 
+.category-option:hover {
+  background-color: #2A3647;
+  color: white;
 }
 
 .assign-to-box {

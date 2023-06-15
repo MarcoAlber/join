@@ -297,7 +297,7 @@ input::-webkit-inner-spin-button {
 }
 
 .dp-none {
-    display: none;
+    display: none !important;
 }
 
 .saveButtonContainer {

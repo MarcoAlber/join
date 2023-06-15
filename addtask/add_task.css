@@ -394,6 +394,11 @@ textarea::-webkit-scrollbar-thumb:hover {
 	gap: 10px;
 }
 
+.category-option:hover {
+	background-color: #2A3647;
+	color: white;
+}
+
 .newCategory {
 	width: 100%;
 }

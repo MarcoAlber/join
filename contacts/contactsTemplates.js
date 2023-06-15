@@ -29,7 +29,7 @@ function showContactDetailsTemplate(j) {
             <div><div id="adressDetailsImg" class="adressDetailsImg"></div></div>
             <div class="adressNamePlusAddTask">
                 <span class="nameDetailAdress">${contacts[j]["firstName"]} ${contacts[j]["surname"]}</span>
-                <div onclick="openAddTaskContainer(${j})" class="adressAddTaskContainer">
+                <div onclick="openAddTaskContainer()" class="adressAddTaskContainer">
                     <div><img src="../assets/img/addPlus.png"></div>
                     <span>Add Task</span>
                 </div>

@@ -34,6 +34,23 @@
     top: unset;
     width: 100%;
     height: calc(100dvh - 204px);
+    overflow-y: scroll;
+  }
+
+  .board::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .board::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .board::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  .board::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 
   .joinDescription {
@@ -77,24 +94,6 @@
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
-
-  }
-
-  .status-container::-webkit-scrollbar {
-    width: 3px;
-  }
-
-  .status-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  .status-container::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-
-  .status-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
   }
 
   .status {

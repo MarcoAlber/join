@@ -56,9 +56,9 @@
             <textarea id="input-description" placeholder="Enter a Description" required minlength="3"></textarea>
           </div>
 
-          <div onclick="event.stopPropagation()">
+          <div>
             <p class="text">Category</p>
-            <div id="categoryListContainer" class="categoryContainer">
+            <div id="categoryListContainer" onclick="event.stopPropagation()" class="categoryContainer">
               <div class="category" onclick="openCategoryList()" id="categoryInput">
                 <div>
                   <input class="categoryInputField" type="text" placeholder="Enter a Category" id="category" readonly />
@@ -73,9 +73,9 @@
             </div>
           </div>
 
-          <div onclick="event.stopPropagation()">
+          <div>
             <p class="text">Assign to</p>
-            <div id="assignToContainer" class="categoryContainer">
+            <div id="assignToContainer" onclick="event.stopPropagation()" class="categoryContainer">
               <div class="category" onclick="openAssignToList()" id="assignToInput">
                 <div>
                   <input class="categoryInputField" type="text" placeholder="Assign to" readonly />

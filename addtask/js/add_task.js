@@ -233,6 +233,10 @@ function closeAssignList() {
 function closeCategoryList() {
   document.getElementById("categoryListContainer").innerHTML =
     closeCategoryListHtml();
+  if (category != undefined) {
+    document.getElementById("colorContainer").innerHTML += `<div class="${color} color-container"></div>`;
+    document.getElementById("category").value = `${category}`;
+  }
 }
 
 /** open new category container */
@@ -263,8 +267,6 @@ function getCategory(name, newcolor) {
   category = name;
   color = newcolor;
   closeCategoryList();
-  document.getElementById("colorContainer").innerHTML += `<div class="${color} color-container"></div>`;
-  document.getElementById("category").value = `${name} `;
 }
 
 /**
@@ -446,6 +448,12 @@ function pushTaskOfTemplate(title, description, date) {
   });
 }
 
+/** sets current status if no status is set */
+function setCurrentStatus() {
+  if (currentStatusTemp == undefined) { currentStatusTemp = "to do" }
+  else { currentStatusTemp };
+}
+
 /** get values of inputfields in template */
 function getValuesFromInputsTemplate() {
   let templateTitle = document.getElementById("inputTitleTemplate");
@@ -462,8 +470,10 @@ function getValuesFromInputsTemplate() {
  */
 async function createTaskTemplate(title, description, date) {
   getTasksId();
+  setCurrentStatus();
   pushTaskOfTemplate(title, description, date);
-  if (window.location.pathname == '/board/board.html') {
+  if (window.location.pathname == '/join/board/board.html' ||
+    window.location.pathname == '/board/board.html') {
     addTasks();
     await updateHtml();
     title.value = "";
