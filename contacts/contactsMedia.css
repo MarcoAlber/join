@@ -163,6 +163,7 @@
 
     .emailPlusPhoneContainer {
         padding-bottom: 20px;
+        margin-left: 0;
     }
 
     .contactsHeadlineContainer {
@@ -205,7 +206,9 @@
 
     .adressDetails {
         width: auto;
-        left: -25px;
+        left: 0;
+        right: 0;
+        margin-left: 10px;
     }
 }
 
@@ -246,17 +249,13 @@
         bottom: 115px;
     }
 
-    .emailAdress {
-        width: 250px;
-    }
-
     .contactInformationContainer {
         width: auto;
     }
 
     .contactsHeadlineContainer {
         left: auto;
-        margin-right: 50px;
+        margin-right: 0;
         position: absolute;
         top: 90px;
     }
@@ -265,9 +264,5 @@
 @media(max-width: 400px) {
     .nameDetailAdress {
         word-break: break-word;
-    }
-
-    .emailAdress {
-        width: 170px;
     }
 }
