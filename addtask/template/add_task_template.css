@@ -251,11 +251,10 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .categoryInputField {
+  font-size: 18px;
   border: none;
   cursor: pointer;
-  height: 25px;
-  border-radius: 12px;
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .categoryInputField::placeholder {

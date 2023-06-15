@@ -377,6 +377,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .categoryInputField {
+	font-size: 18px;
 	display: flex;
 	cursor: pointer;
 	border: none;
