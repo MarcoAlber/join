@@ -291,10 +291,6 @@
     border: unset;
   }
 
-  .category {
-    height: 30px;
-  }
-
   #emptySubtask {
     display: none;
   }
