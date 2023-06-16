@@ -316,6 +316,10 @@
     width: 250px;
   }
 
+  .categoryInputField {
+    font-size: 16px;
+  }
+
   .at-headline {
     width: 256px;
     margin-bottom: 20px;
