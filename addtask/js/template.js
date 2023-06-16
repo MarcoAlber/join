@@ -67,7 +67,7 @@ function openCategoryListHtml() {
 function closeCategoryListHtml() {
   return /*html*/ `
   <div class="category" onclick="openCategoryList()" id="categoryInput">
-  <div>
+  <div class="categoryInputContainer">
     <input class="categoryInputField" type="text" placeholder="Enter a Category" id="category"/>
   </div>
   <div id="colorContainer">
@@ -88,7 +88,7 @@ function newCreatedCategory(createdCategory) {
 function clearCategoryHtml() {
   return /*html*/ `
   <div class="category" onclick="openCategoryList()" id="categoryInput">
-  <div>
+  <div class="categoryInputContainer">
     <input class="categoryInputField" type="text" placeholder="Enter a Category" id="categoryInputField"/>
   </div>
   <div>
@@ -111,7 +111,7 @@ function openAssignToListHtml() {
 function closeAssignListHtml() {
   return /*html*/ `
   <div class="category" onclick="openAssignToList()" id="assignToInput">
-    <div>
+    <div class="categoryInputContainer">
       <input class="categoryInputField" type="text" placeholder="Assign to"/>
     </div>
     <div class="dropdownContainer">
