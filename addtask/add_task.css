@@ -79,6 +79,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .category {
+	position: relative;
 	background: white;
 	height: 40px;
 	width: 422px;
@@ -413,7 +414,14 @@ textarea::-webkit-scrollbar-thumb:hover {
 	display: none;
 }
 
+.dropdownContainer {
+	position: absolute;
+	right: 0;
+}
+
 #colorContainer {
+	position: absolute;
+	right: 0;
 	margin-right: auto;
 }
 

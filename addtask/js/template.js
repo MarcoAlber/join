@@ -43,7 +43,9 @@ function openCategoryListHtml() {
   return /*html*/ `
   <div class="category" onclick="closeCategoryList()" id="closedCategoryInput">
   <input class="categoryInputField" type="text" placeholder="Enter a Category"/>
+  <div class="dropdownContainer">
   <img class="rotate90deg" src="../assets/img/dropdown.svg">
+</div>
 </div>
 <div id="categoryList" class="d-none categoryList">
   <div class="category-option">
@@ -71,7 +73,7 @@ function closeCategoryListHtml() {
   <div id="colorContainer">
 
   </div>
-  <div>
+  <div class="dropdownContainer">
     <img src="../assets/img/dropdown.svg" />
   </div>`;
 }
@@ -99,7 +101,9 @@ function openAssignToListHtml() {
   return /*html*/ `
   <div class="category" onclick="closeAssignList()" id="closedAssingToInput">
   <input class="categoryInputField" type="text" placeholder="Assign to"/>
+  <div class="dropdownContainer">
   <img class="rotate90deg" src="../assets/img/dropdown.svg">
+</div>
 </div>
 <div id="AssignToList" class="d-none categoryList">`;
 }
@@ -110,7 +114,7 @@ function closeAssignListHtml() {
     <div>
       <input class="categoryInputField" type="text" placeholder="Assign to"/>
     </div>
-    <div>
+    <div class="dropdownContainer">
       <img src="../assets/img/dropdown.svg" />
     </div>
   </div>
