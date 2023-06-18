@@ -150,13 +150,9 @@
 }
 
 @media (max-width: 900px) {
-  header {
-    height: 60px !important;
-  }
-
   main {
-    top: 60px;
-    height: calc(100dvh - 140px);
+    top: 79.02px;
+    height: calc(100dvh - 159.02px);
     left: 10px;
     overflow-y: auto;
   }
@@ -228,9 +224,9 @@
     background-color: #2a3647;
     color: white;
     border-radius: 10px;
-    height: 35px;
+    height: 45px;
     border: unset;
-    width: 100px;
+    width: 120px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;

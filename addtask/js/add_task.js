@@ -296,7 +296,7 @@ function clearAll() {
 
 /**
  * checks if contact is already in assign to and disable the name if so
- * @param {json} contact = contact details
+ * @param {id} contact = id of contact
  */
 function renderNoAssignToContacts(contact) {
   for (let j = 0; j < assignTo.length; j++) {
@@ -338,7 +338,7 @@ function renderAddTaskContacts() {
  * adds or remove  assign to contact
  * @param {string} firstName = first name of assign to contact
  * @param {string} surname = surname of assign to contact
- * @param {json} i = contact details of assign to contact
+ * @param {id} i = id of contact
  */
 function assignContactTo(firstName, surname, i) {
   if (document.getElementById(`${contacts[i]["mail"]}-input`).checked == false) {

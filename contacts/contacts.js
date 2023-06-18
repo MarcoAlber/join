@@ -239,6 +239,10 @@ function closeEditSaveDeleteContactContainer() {
 
 /** open add task container */
 function openAddTaskContainer() {
+    if (matchMedia('only screen and (max-width: 900px)').matches) {
+        document.getElementById('closeAddTaskContainer').classList.remove('bg');
+        document.getElementById('header').classList.add('dp-none');
+    }
     subTask = [];
     document.getElementById("newSubtask").innerHTML = '';
     ifPrioSet();
@@ -272,11 +276,18 @@ function setPrio(prio) {
 
 /** close add task container */
 function closeAddTaskContainer() {
-    document.getElementById('taskBoard').classList.add('moveContainerOutMedia');
-    setTimeout(function () {
+    if (matchMedia('only screen and (max-width: 900px)').matches) {
+        document.getElementById('header').classList.remove('dp-none');
         document.getElementById('addTaskContainerContacts').classList.add('dp-none');
-        document.getElementById('taskBoard').classList.remove('moveContainerOutMedia');
-    }, 400);
+        document.getElementById('closeAddTaskContainer').classList.add('bg');
+    }
+    else {
+        document.getElementById('taskBoard').classList.add('moveContainerOutMedia');
+        setTimeout(function () {
+            document.getElementById('addTaskContainerContacts').classList.add('dp-none');
+            document.getElementById('taskBoard').classList.remove('moveContainerOutMedia');
+        }, 400);
+    }
 }
 
 /**

@@ -519,7 +519,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .dp-none {
-  display: none;
+  display: none !important;
 }
 
 .rotate90deg {
